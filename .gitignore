@@ -13,3 +13,6 @@ tts_benchmark_report.xlsx
 
 # OS
 .DS_Store
+
+# Ignore virtual environment folder
+venv/
