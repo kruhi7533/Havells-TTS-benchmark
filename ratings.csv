@@ -1,0 +1,4 @@
+model,audio,audio_path,naturalness,clarity,pronunciation,consistency
+elevenlabs,english_0.mp3,outputs\elevenlabs\english_0.mp3,3,3,3,3
+elevenlabs,english_1.mp3,outputs\elevenlabs\english_1.mp3,2,3,5,3
+sarvam,english_0.wav,outputs\sarvam\english_0.wav,3,3,3,3
