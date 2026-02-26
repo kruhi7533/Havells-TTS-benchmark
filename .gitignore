@@ -5,7 +5,7 @@ __pycache__/
 # Ignore logs
 logs/
 
-# Ignore Excel report
+# Ignore Excel report (old)
 tts_benchmark_report.xlsx
 
 # Environment

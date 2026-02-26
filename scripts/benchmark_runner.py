@@ -2,8 +2,13 @@ import os
 import csv
 import datetime
 import json
+import sys
 from elevenlabs_api import generate_elevenlabs_audio
 from sarvam_api import generate_sarvam_audio
+
+# Set working directory to the script's directory for robust relative paths
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+os.chdir(SCRIPT_DIR)
 
 VOICE_ID = "vYENaCJHl4vFKNDYPr8y"
 LANGUAGE = "english"
@@ -11,11 +16,18 @@ LANGUAGE = "english"
 DATASET_PATH = f"../dataset/{LANGUAGE}.txt"
 OUTPUT_DIR_ELEVEN = "../outputs/elevenlabs"
 OUTPUT_DIR_SARVAM = "../outputs/sarvam"
-LOG_PATH = "../logs/latency_raw.csv"
+LOG_DIR = "../logs"
+LOG_PATH = os.path.join(LOG_DIR, "latency_raw.csv")
+
+# Ensure API Keys exist
+if not os.getenv("ELEVENLABS_API_KEY"):
+    print("WARNING: ELEVENLABS_API_KEY not found in environment.")
+if not os.getenv("SARVAM_API_KEY"):
+    print("WARNING: SARVAM_API_KEY not found in environment.")
 
 os.makedirs(OUTPUT_DIR_ELEVEN, exist_ok=True)
 os.makedirs(OUTPUT_DIR_SARVAM, exist_ok=True)
-os.makedirs("../logs", exist_ok=True)
+os.makedirs(LOG_DIR, exist_ok=True)
 
 
 def run_benchmark():
