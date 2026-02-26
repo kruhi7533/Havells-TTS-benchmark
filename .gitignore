@@ -1,0 +1,15 @@
+# Python
+__pycache__/
+*.pyc
+
+# Ignore logs
+logs/
+
+# Ignore Excel report
+tts_benchmark_report.xlsx
+
+# Environment
+.env
+
+# OS
+.DS_Store
