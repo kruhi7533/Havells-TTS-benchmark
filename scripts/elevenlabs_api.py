@@ -19,8 +19,6 @@ def generate_elevenlabs_audio(text, voice_id, output_path):
 
     start_time = time.time()
     response = requests.post(url, headers=headers, json=payload)
-    print("Status Code:", response.status_code)
-    print("Response Text:", response.text)
     latency = time.time() - start_time
 
     if response.status_code != 200:
