@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import os
 from pathlib import Path
+import re
 
 st.set_page_config(page_title="TTS Evaluation Tool", layout="wide")
 
@@ -10,8 +11,8 @@ RATINGS_FILE = "ratings.csv"
 AUDIO_EXTENSIONS = (".wav", ".mp3", ".mpeg")
 
 SOURCE_DIRS = {
-    "sarvam": ["dataset/sarvam", "outputs/sarvam"],
-    "elevenlabs": ["dataset/elevenlabs", "outputs/elevenlabs"],
+    "sarvam": ["outputs/sarvam"],
+    "elevenlabs": ["outputs/elevenlabs"],
 }
 
 
@@ -37,7 +38,47 @@ def get_audio_files(source):
         if p.is_file() and p.suffix.lower() in AUDIO_EXTENSIONS
     ]
 
-    return sorted(files, key=lambda x: x.name.lower())
+    # Keep numeric sequence stable: english_2 comes before english_10.
+    return sorted(files, key=audio_sort_key)
+
+
+def audio_sort_key(path_obj):
+    stem = path_obj.stem.lower()
+    match = re.search(r"_(\d+)$", stem)
+    idx = int(match.group(1)) if match else float("inf")
+    return (stem.rsplit("_", 1)[0], idx, path_obj.name.lower())
+
+
+def get_text_mapping(dataset_file):
+    if not dataset_file:
+        return {}
+    p = Path(dataset_file)
+    if not p.exists() or not p.is_file():
+        return {}
+
+    with p.open("r", encoding="utf-8") as f:
+        lines = [line.strip() for line in f.readlines()]
+
+    return {i: line for i, line in enumerate(lines)}
+
+
+def get_audio_index_from_name(path_obj):
+    match = re.search(r"_(\d+)$", path_obj.stem.lower())
+    return int(match.group(1)) if match else None
+
+
+def find_dataset_file_for_audio(path_obj):
+    stem = path_obj.stem
+    base = re.sub(r"_\d+$", "", stem, flags=re.IGNORECASE)
+    candidates = [
+        Path("dataset") / f"{base}.txt",
+        Path("dataset") / f"{base.lower()}.txt",
+        Path("dataset") / f"{base.capitalize()}.txt",
+    ]
+    for c in candidates:
+        if c.exists() and c.is_file():
+            return c
+    return None
 
 
 def load_ratings():
@@ -131,11 +172,52 @@ if audio_files:
     st.subheader(
         f"Audio {st.session_state.audio_index+1}/{total_files}"
     )
+    st.caption(f"File: {current_file.name}")
 
     if already_rated:
         st.info("Already rated")
 
     st.audio(str(current_file))
+
+    if developer_mode:
+        st.markdown("### Developer Verification")
+
+        selected_name = st.selectbox(
+            "Select Any Audio",
+            options=[f.name for f in audio_files],
+            index=st.session_state.audio_index,
+            key="dev_audio_select",
+        )
+
+        selected_file = next(
+            (f for f in audio_files if f.name == selected_name),
+            current_file
+        )
+
+        selected_idx = audio_files.index(selected_file)
+
+        if selected_idx != st.session_state.audio_index:
+            st.session_state.audio_index = selected_idx
+            st.rerun()
+
+        dataset_file = find_dataset_file_for_audio(current_file)
+        audio_line_idx = get_audio_index_from_name(current_file)
+        text_map = get_text_mapping(dataset_file)
+
+        if dataset_file is not None:
+            st.caption(f"Dataset: {dataset_file}")
+            if audio_line_idx is not None and audio_line_idx in text_map:
+                st.info(
+                    f"Text #{audio_line_idx}: {text_map[audio_line_idx]}"
+                )
+            elif audio_line_idx is not None:
+                st.warning(
+                    f"No text line found for index {audio_line_idx} in {dataset_file.name}"
+                )
+            else:
+                st.warning("Could not parse numeric index from audio filename.")
+        else:
+            st.warning("No matching dataset text file found for this audio.")
 
     st.markdown("### Rate Audio")
 
