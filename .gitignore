@@ -2,8 +2,7 @@
 __pycache__/
 *.pyc
 
-# Ignore logs
-logs/
+# Ignore logsimage.png
 
 # Ignore Excel report (old)
 tts_benchmark_report.xlsx

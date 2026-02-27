@@ -1,0 +1,68 @@
+timestamp,language,text,model,latency_seconds,status,output_file
+2026-02-27 17:23:45.666484,english,Turn on bedroom AC 2.,ElevenLabs,1.9937725067138672,Success,../outputs/elevenlabs/english/english_50.mp3
+2026-02-27 17:23:45.666484,english,Turn on bedroom AC 2.,Sarvam,1.3907718658447266,Success,../outputs/sarvam/english/english_50.wav
+2026-02-27 17:23:49.058056,english,Set vertical swing to position 4 and horizontal swing to position 3 in bedroom AC 2.,ElevenLabs,1.5237071514129639,Success,../outputs/elevenlabs/english/english_51.mp3
+2026-02-27 17:23:49.058056,english,Set vertical swing to position 4 and horizontal swing to position 3 in bedroom AC 2.,Sarvam,4.249944448471069,Success,../outputs/sarvam/english/english_51.wav
+2026-02-27 17:23:54.838243,english,Turn on eco mode in bedroom AC 2.,ElevenLabs,1.3144702911376953,Success,../outputs/elevenlabs/english/english_52.mp3
+2026-02-27 17:23:54.838243,english,Turn on eco mode in bedroom AC 2.,Sarvam,1.7919209003448486,Success,../outputs/sarvam/english/english_52.wav
+2026-02-27 17:23:57.947571,english,Set fan speed to medium in bedroom AC 2.,ElevenLabs,1.210575819015503,Success,../outputs/elevenlabs/english/english_53.mp3
+2026-02-27 17:23:57.947571,english,Set fan speed to medium in bedroom AC 2.,Sarvam,2.32497239112854,Success,../outputs/sarvam/english/english_53.wav
+2026-02-27 17:24:01.492126,english,Turn on dining room AC 1 and set it's moonlight to future forward.,ElevenLabs,1.4136629104614258,Success,../outputs/elevenlabs/english/english_54.mp3
+2026-02-27 17:24:01.492126,english,Turn on dining room AC 1 and set it's moonlight to future forward.,Sarvam,3.8661444187164307,Success,../outputs/sarvam/english/english_54.wav
+2026-02-27 17:24:06.791051,english,Set temperature 50 degrees in dining room AC 1.,ElevenLabs,1.3495278358459473,Success,../outputs/elevenlabs/english/english_55.mp3
+2026-02-27 17:24:06.791051,english,Set temperature 50 degrees in dining room AC 1.,Sarvam,2.071458578109741,Success,../outputs/sarvam/english/english_55.wav
+2026-02-27 17:24:10.218894,english,Set variable capacity C1 in dining room AC 1.,ElevenLabs,1.4025626182556152,Success,../outputs/elevenlabs/english/english_56.mp3
+2026-02-27 17:24:10.218894,english,Set variable capacity C1 in dining room AC 1.,Sarvam,2.889742374420166,Success,../outputs/sarvam/english/english_56.wav
+2026-02-27 17:24:14.522265,english,Turn on sleep mode in dining room AC 1.,ElevenLabs,1.3948936462402344,Success,../outputs/elevenlabs/english/english_57.mp3
+2026-02-27 17:24:14.522265,english,Turn on sleep mode in dining room AC 1.,Sarvam,1.865159511566162,Success,../outputs/sarvam/english/english_57.wav
+2026-02-27 17:24:17.787326,english,Turn on the AC in study and set it to silent mode.,ElevenLabs,1.5090184211730957,Success,../outputs/elevenlabs/english/english_58.mp3
+2026-02-27 17:26:09.980298,english,Turn on the AC in study and set it to silent mode.,ElevenLabs,1.344226598739624,Success,../outputs/elevenlabs/english/english_58.mp3
+2026-02-27 17:26:09.980298,english,Turn on the AC in study and set it to silent mode.,Sarvam,1.827101230621338,Success,../outputs/sarvam/english/english_58.wav
+2026-02-27 17:26:13.160098,english,Set switch off timer 100 minutes for the AC in the study and set it's moonlight to balance.,ElevenLabs,1.760836124420166,Success,../outputs/elevenlabs/english/english_59.mp3
+2026-02-27 17:26:13.160098,english,Set switch off timer 100 minutes for the AC in the study and set it's moonlight to balance.,Sarvam,3.6835169792175293,Success,../outputs/sarvam/english/english_59.wav
+2026-02-27 17:26:18.611402,english,Turn off the study AC 1.,ElevenLabs,1.1386349201202393,Success,../outputs/elevenlabs/english/english_60.mp3
+2026-02-27 17:26:18.611402,english,Turn off the study AC 1.,Sarvam,1.5689804553985596,Success,../outputs/sarvam/english/english_60.wav
+2026-02-27 17:26:21.327021,english,Turn on the water heater in the kitchen.,ElevenLabs,1.1623780727386475,Success,../outputs/elevenlabs/english/english_61.mp3
+2026-02-27 17:26:21.327021,english,Turn on the water heater in the kitchen.,Sarvam,1.339554786682129,Success,../outputs/sarvam/english/english_61.wav
+2026-02-27 17:26:23.834994,english,Turn on kitchen AC 3 and set to fan mode.,ElevenLabs,1.2143120765686035,Success,../outputs/elevenlabs/english/english_62.mp3
+2026-02-27 17:26:23.834994,english,Turn on kitchen AC 3 and set to fan mode.,Sarvam,2.5633161067962646,Success,../outputs/sarvam/english/english_62.wav
+2026-02-27 17:26:27.617627,english,Turn on display mode in kitchen AC 3.,ElevenLabs,1.4339091777801514,Success,../outputs/elevenlabs/english/english_63.mp3
+2026-02-27 17:26:27.617627,english,Turn on display mode in kitchen AC 3.,Sarvam,2.8271005153656006,Success,../outputs/sarvam/english/english_63.wav
+2026-02-27 17:26:31.890632,english,Turn on kids room AC 1 and turn on humicon mode in that.,ElevenLabs,1.287684440612793,Success,../outputs/elevenlabs/english/english_64.mp3
+2026-02-27 17:26:31.890632,english,Turn on kids room AC 1 and turn on humicon mode in that.,Sarvam,3.408557415008545,Success,../outputs/sarvam/english/english_64.wav
+2026-02-27 17:26:36.596889,english,Set fan speed auto in kids room AC 1.,ElevenLabs,1.2345445156097412,Success,../outputs/elevenlabs/english/english_65.mp3
+2026-02-27 17:26:36.596889,english,Set fan speed auto in kids room AC 1.,Sarvam,1.832768440246582,Success,../outputs/sarvam/english/english_65.wav
+2026-02-27 17:26:39.672220,english,Turn on office AC 1 and set it's variable capacity to C5.,ElevenLabs,1.4581034183502197,Success,../outputs/elevenlabs/english/english_66.mp3
+2026-02-27 17:26:39.672220,english,Turn on office AC 1 and set it's variable capacity to C5.,Sarvam,3.076751470565796,Success,../outputs/sarvam/english/english_66.wav
+2026-02-27 17:26:44.212075,english,Set switch off timer to 1000 minutes in my office AC 1.,ElevenLabs,1.3996188640594482,Success,../outputs/elevenlabs/english/english_67.mp3
+2026-02-27 17:26:44.212075,english,Set switch off timer to 1000 minutes in my office AC 1.,Sarvam,2.424499988555908,Success,../outputs/sarvam/english/english_67.wav
+2026-02-27 17:26:48.042199,english,Turn on silent mode in office AC 1.,ElevenLabs,1.2851228713989258,Success,../outputs/elevenlabs/english/english_68.mp3
+2026-02-27 17:26:48.042199,english,Turn on silent mode in office AC 1.,Sarvam,1.9857532978057861,Success,../outputs/sarvam/english/english_68.wav
+2026-02-27 17:26:51.318104,english,Turn on all ACs in living room.,ElevenLabs,1.2508413791656494,Success,../outputs/elevenlabs/english/english_69.mp3
+2026-02-27 17:26:51.318104,english,Turn on all ACs in living room.,Sarvam,1.9430806636810303,Success,../outputs/sarvam/english/english_69.wav
+2026-02-27 17:26:54.519036,english,Turn on the AC in dining room.,ElevenLabs,1.123920202255249,Success,../outputs/elevenlabs/english/english_70.mp3
+2026-02-27 17:26:54.519036,english,Turn on the AC in dining room.,Sarvam,1.294646978378296,Success,../outputs/sarvam/english/english_70.wav
+2026-02-27 17:26:56.944593,english,Turn on the AC in dining room.,ElevenLabs,1.1713953018188477,Success,../outputs/elevenlabs/english/english_71.mp3
+2026-02-27 17:26:56.944593,english,Turn on the AC in dining room.,Sarvam,1.3054091930389404,Success,../outputs/sarvam/english/english_71.wav
+2026-02-27 17:26:59.425400,english,Turn on child lock mode in dining room AC 1.,ElevenLabs,1.2880237102508545,Success,../outputs/elevenlabs/english/english_72.mp3
+2026-02-27 17:26:59.425400,english,Turn on child lock mode in dining room AC 1.,Sarvam,2.005383014678955,Success,../outputs/sarvam/english/english_72.wav
+2026-02-27 17:27:02.733872,english,Set moonlight to dream on in dining room AC 1.,ElevenLabs,1.6498093605041504,Success,../outputs/elevenlabs/english/english_73.mp3
+2026-02-27 17:27:02.733872,english,Set moonlight to dream on in dining room AC 1.,Sarvam,1.840587854385376,Success,../outputs/sarvam/english/english_73.wav
+2026-02-27 17:27:06.229301,english,Turn on kitchen AC 2 and set it to 18 degrees.,ElevenLabs,1.9327845573425293,Success,../outputs/elevenlabs/english/english_74.mp3
+2026-02-27 17:27:06.229301,english,Turn on kitchen AC 2 and set it to 18 degrees.,Sarvam,2.6445810794830322,Success,../outputs/sarvam/english/english_74.wav
+2026-02-27 17:27:10.812614,english,Turn on turbo mode in kitchen AC 2.,ElevenLabs,1.307905912399292,Success,../outputs/elevenlabs/english/english_75.mp3
+2026-02-27 17:27:10.812614,english,Turn on turbo mode in kitchen AC 2.,Sarvam,1.9278032779693604,Success,../outputs/sarvam/english/english_75.wav
+2026-02-27 17:27:14.054318,english,Turn on eco mode in kitchen AC 2.,ElevenLabs,1.1986052989959717,Success,../outputs/elevenlabs/english/english_76.mp3
+2026-02-27 17:27:14.054318,english,Turn on eco mode in kitchen AC 2.,Sarvam,2.012366533279419,Success,../outputs/sarvam/english/english_76.wav
+2026-02-27 17:27:17.278559,english,What is the status of my kitchen AC 2?,ElevenLabs,1.3596291542053223,Success,../outputs/elevenlabs/english/english_77.mp3
+2026-02-27 17:27:17.278559,english,What is the status of my kitchen AC 2?,Sarvam,1.8518667221069336,Success,../outputs/sarvam/english/english_77.wav
+2026-02-27 17:27:20.496050,english,Set silent mode in kitchen AC 2.,ElevenLabs,1.1752209663391113,Success,../outputs/elevenlabs/english/english_78.mp3
+2026-02-27 17:27:20.496050,english,Set silent mode in kitchen AC 2.,Sarvam,2.2757904529571533,Success,../outputs/sarvam/english/english_78.wav
+2026-02-27 17:27:23.953076,english,Turn on office AC 3 and set it to medium light intensity with moonlight set to down to dusk.,ElevenLabs,1.5289204120635986,Success,../outputs/elevenlabs/english/english_79.mp3
+2026-02-27 17:27:23.953076,english,Turn on office AC 3 and set it to medium light intensity with moonlight set to down to dusk.,Sarvam,2.9544379711151123,Success,../outputs/sarvam/english/english_79.wav
+2026-02-27 17:27:28.442740,english,Set switch off timer to 12 minutes and turn off display mode in office AC 3.,ElevenLabs,1.4627130031585693,Success,../outputs/elevenlabs/english/english_80.mp3
+2026-02-27 17:27:28.442740,english,Set switch off timer to 12 minutes and turn off display mode in office AC 3.,Sarvam,2.809919834136963,Success,../outputs/sarvam/english/english_80.wav
+2026-02-27 17:27:32.722499,english,Turn on the fan in the yoga room.,ElevenLabs,1.1434664726257324,Success,../outputs/elevenlabs/english/english_81.mp3
+2026-02-27 17:27:32.722499,english,Turn on the fan in the yoga room.,Sarvam,1.44388747215271,Success,../outputs/sarvam/english/english_81.wav
+2026-02-27 17:27:35.315843,english,Turn on turbo mode in kitchen AC 1.,ElevenLabs,1.173248052597046,Success,../outputs/elevenlabs/english/english_82.mp3
+2026-02-27 17:27:35.315843,english,Turn on turbo mode in kitchen AC 1.,Sarvam,1.4160897731781006,Success,../outputs/sarvam/english/english_82.wav
