@@ -1,4 +1,13 @@
 model,audio,audio_path,naturalness,clarity,pronunciation,consistency
-elevenlabs,english_0.mp3,outputs\elevenlabs\english_0.mp3,3,3,3,3
-elevenlabs,english_1.mp3,outputs\elevenlabs\english_1.mp3,2,3,5,3
-sarvam,english_0.wav,outputs\sarvam\english_0.wav,3,3,3,3
+elevenlabs,english_0.mp3,outputs\elevenlabs\english_0.mp3,2,5,5,5
+elevenlabs,english_1.mp3,outputs\elevenlabs\english_1.mp3,2,4,3,3
+elevenlabs,english_10.mp3,outputs\elevenlabs\english_10.mp3,2,4,5,5
+elevenlabs,english_11.mp3,outputs\elevenlabs\english_11.mp3,2,4,4,4
+elevenlabs,english_12.mp3,outputs\elevenlabs\english_12.mp3,2,4,1,4
+elevenlabs,english_13.mp3,outputs\elevenlabs\english_13.mp3,2,4,5,4
+elevenlabs,english_14.mp3,outputs\elevenlabs\english_14.mp3,2,4,5,5
+elevenlabs,english_15.mp3,outputs\elevenlabs\english_15.mp3,2,4,4,5
+elevenlabs,english_16.mp3,outputs\elevenlabs\english_16.mp3,2,4,5,5
+elevenlabs,english_17.mp3,outputs\elevenlabs\english_17.mp3,2,4,5,5
+elevenlabs,english_18.mp3,outputs\elevenlabs\english_18.mp3,2,4,4,4
+elevenlabs,english_19.mp3,outputs\elevenlabs\english_19.mp3,2,4,4,4

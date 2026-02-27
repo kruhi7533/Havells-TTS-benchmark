@@ -3,34 +3,59 @@ import pandas as pd
 import os
 from pathlib import Path
 
-st.set_page_config(
-    page_title="TTS Evaluation Tool",
-    layout="wide"
-)
+st.set_page_config(page_title="TTS Evaluation Tool", layout="wide")
 
 RATINGS_FILE = "ratings.csv"
+
 AUDIO_EXTENSIONS = (".wav", ".mp3", ".mpeg")
+
 SOURCE_DIRS = {
     "sarvam": ["dataset/sarvam", "outputs/sarvam"],
     "elevenlabs": ["dataset/elevenlabs", "outputs/elevenlabs"],
 }
 
 
-def normalize_path(path_value):
-    return str(Path(path_value)).replace("\\", "/").lower()
+def normalize_path(p):
+    return str(Path(p)).replace("\\", "/").lower()
 
-st.markdown("""
-<style>
-[data-testid="stFileUploader"] {
-    cursor: pointer !important;
-}
-[data-testid="stFileUploader"] * {
-    cursor: pointer !important;
-}
-</style>
-""", unsafe_allow_html=True)
 
-st.title("TTS Human Evaluation Tool")
+def get_source_dir(source):
+    for c in SOURCE_DIRS[source]:
+        p = Path(c)
+        if p.exists() and p.is_dir():
+            return p
+    return None
+
+
+def get_audio_files(source):
+    d = get_source_dir(source)
+    if not d:
+        return []
+
+    files = [
+        p for p in d.iterdir()
+        if p.is_file() and p.suffix.lower() in AUDIO_EXTENSIONS
+    ]
+
+    return sorted(files, key=lambda x: x.name.lower())
+
+
+def load_ratings():
+    if not os.path.exists(RATINGS_FILE):
+        return pd.DataFrame()
+
+    df = pd.read_csv(RATINGS_FILE)
+
+    if "model" not in df.columns:
+        df["model"] = "unknown"
+
+    if "audio_path" not in df.columns and "audio" in df.columns:
+        df["audio_path"] = df["audio"]
+
+    return df
+
+
+st.title("🎧 TTS Human Evaluation Tool")
 
 st.sidebar.title("Settings")
 
@@ -40,40 +65,8 @@ if developer_mode:
     if st.sidebar.button("Reset Evaluation Data"):
         if os.path.exists(RATINGS_FILE):
             os.remove(RATINGS_FILE)
-        st.success("Dashboard Reset!")
+        st.success("All ratings cleared")
         st.rerun()
-
-
-def get_source_dir(source_name):
-    for candidate in SOURCE_DIRS[source_name]:
-        path = Path(candidate)
-        if path.exists() and path.is_dir():
-            return path
-    return None
-
-
-def get_audio_files(source_name):
-    source_dir = get_source_dir(source_name)
-    if source_dir is None:
-        return []
-
-    files = [
-        p for p in source_dir.iterdir()
-        if p.is_file() and p.suffix.lower() in AUDIO_EXTENSIONS
-    ]
-    return sorted(files, key=lambda p: p.name.lower())
-
-
-def load_ratings():
-    if not os.path.exists(RATINGS_FILE):
-        return pd.DataFrame()
-
-    df = pd.read_csv(RATINGS_FILE)
-    if "model" not in df.columns:
-        df["model"] = "unknown"
-    if "audio_path" not in df.columns and "audio" in df.columns:
-        df["audio_path"] = df["audio"]
-    return df
 
 
 if "audio_index" not in st.session_state:
@@ -84,84 +77,86 @@ if "audio_source" not in st.session_state:
 
 audio_source = st.selectbox(
     "Choose Audio Source",
-    options=["sarvam", "elevenlabs"],
-    index=0 if st.session_state.audio_source == "sarvam" else 1
+    ["sarvam", "elevenlabs"],
 )
 
-if st.session_state.audio_source != audio_source:
+if audio_source != st.session_state.audio_source:
     st.session_state.audio_source = audio_source
     st.session_state.audio_index = 0
 
+# Load Data
 audio_files = get_audio_files(audio_source)
-source_dir = get_source_dir(audio_source)
 ratings_df = load_ratings()
 
-source_file_map = {normalize_path(str(p)): p for p in audio_files}
-rated_paths_for_source = set()
-if not ratings_df.empty and "audio_path" in ratings_df.columns:
-    rated_df = ratings_df[ratings_df["model"] == audio_source] if "model" in ratings_df.columns else ratings_df
-    rated_paths_for_source = {
-        normalize_path(path_value)
-        for path_value in rated_df["audio_path"].dropna().tolist()
+rated_paths = set()
+
+if not ratings_df.empty:
+    rated_subset = ratings_df[
+        ratings_df["model"] == audio_source
+    ]
+
+    rated_paths = {
+        normalize_path(p)
+        for p in rated_subset["audio_path"]
     }
 
-if developer_mode and audio_files:
-    selected_audio_name = st.selectbox(
-        "Select Any Audio (Developer)",
-        options=[p.name for p in audio_files],
-        index=st.session_state.audio_index,
-        key=f"dev_audio_picker_{audio_source}"
-    )
-    selected_idx = next(i for i, p in enumerate(audio_files) if p.name == selected_audio_name)
-    if selected_idx != st.session_state.audio_index:
-        st.session_state.audio_index = selected_idx
-        st.rerun()
+# Progress Tracking
+if audio_files:
+    total_files = len(audio_files)
+    rated_count = len(rated_paths)
 
-# Evaluation
+    progress = rated_count / total_files
+
+    st.progress(progress)
+    st.caption(
+        f"Progress: {rated_count}/{total_files} "
+        f"({progress*100:.1f}%)"
+    )
+
+# Evaluation Section
 if audio_files:
 
     total_files = len(audio_files)
 
-    # Prevent overflow
     if st.session_state.audio_index >= total_files:
         st.session_state.audio_index = total_files - 1
 
     current_file = audio_files[
         st.session_state.audio_index
     ]
+
     current_key = normalize_path(str(current_file))
-    is_current_rated = current_key in rated_paths_for_source
+    already_rated = current_key in rated_paths
 
     st.subheader(
-        f"Audio {st.session_state.audio_index + 1} / {total_files}"
+        f"Audio {st.session_state.audio_index+1}/{total_files}"
     )
 
-    st.caption(f"Source: {audio_source} | Folder: {source_dir}")
-    if is_current_rated:
-        st.info("This audio already has a saved rating. You can update it.")
+    if already_rated:
+        st.info("Already rated")
+
     st.audio(str(current_file))
 
-    # Rating Section
-    st.markdown("Rate Audio")
+    st.markdown("### Rate Audio")
 
-    col1, col2 = st.columns(2)
+    c1, c2 = st.columns(2)
 
-    with col1:
+    with c1:
         naturalness = st.slider("Naturalness", 1, 5, 3)
         clarity = st.slider("Clarity", 1, 5, 3)
 
-    with col2:
+    with c2:
         pronunciation = st.slider("Pronunciation", 1, 5, 3)
         consistency = st.slider("Consistency", 1, 5, 3)
 
-
-    b1, b2 = st.columns(2)
+    b1, b2, b3 = st.columns(3)
 
     with b1:
-        submit_label = "Update Rating" if is_current_rated else "Submit Rating"
-        if st.button(submit_label):
+        label = "Update Rating" if already_rated else "Submit Rating"
 
-            data = {
+        if st.button(label):
+
+            new_row = pd.DataFrame([{
                 "model": audio_source,
                 "audio": current_file.name,
                 "audio_path": str(current_file),
@@ -169,99 +164,104 @@ if audio_files:
                 "clarity": clarity,
                 "pronunciation": pronunciation,
                 "consistency": consistency
-            }
-
-            new_df = pd.DataFrame([data])
+            }])
 
             if os.path.exists(RATINGS_FILE):
-                old_df = load_ratings()
-                if "audio_path" in old_df.columns and "model" in old_df.columns:
-                    target_path = normalize_path(str(current_file))
-                    old_df = old_df[
-                        ~(
-                            (old_df["model"] == audio_source)
-                            & (old_df["audio_path"].astype(str).map(normalize_path) == target_path)
+                old = load_ratings()
+
+                old = old[
+                    ~(
+                        (old["model"] == audio_source)
+                        &
+                        (
+                            old["audio_path"]
+                            .map(normalize_path)
+                            == current_key
                         )
-                    ]
-                df = pd.concat([old_df, new_df],
-                               ignore_index=True)
+                    )
+                ]
+
+                df = pd.concat([old, new_row])
             else:
-                df = new_df
+                df = new_row
 
             df.to_csv(RATINGS_FILE, index=False)
 
-            st.success("Rating Saved!")
+            st.success("Rating Saved")
 
+    # NEXT
     with b2:
         if st.button("Next Audio"):
-
             if st.session_state.audio_index < total_files - 1:
                 st.session_state.audio_index += 1
                 st.rerun()
+
+    # SKIP RATED BUTTON (NORMAL MODE ONLY)
+    with b3:
+        if (
+            not developer_mode
+            and st.button("Skip Rated Audio")
+        ):
+
+            next_idx = None
+
+            for i, f in enumerate(audio_files):
+                if normalize_path(str(f)) not in rated_paths:
+                    next_idx = i
+                    break
+
+            if next_idx is not None:
+                st.session_state.audio_index = next_idx
+                st.rerun()
             else:
-                st.warning("Last audio reached!")
+                st.warning("All audios already rated")
+
 else:
-    st.warning(
-        f"No audio files found for '{audio_source}'. "
-        f"Expected one of: {', '.join(SOURCE_DIRS[audio_source])}"
-    )
+    st.warning("No audio files found.")
 
-if (not developer_mode) and audio_files and rated_paths_for_source:
-    st.markdown("---")
-    st.subheader("Re-listen Rated Audio")
-    rated_file_keys = sorted(
-        [k for k in rated_paths_for_source if k in source_file_map],
-        key=lambda x: source_file_map[x].name.lower()
-    )
-    if rated_file_keys:
-        selected_rated_key = st.selectbox(
-            "Rated files",
-            options=rated_file_keys,
-            format_func=lambda k: source_file_map[k].name,
-            key=f"relisten_rated_{audio_source}"
-        )
-        st.audio(str(source_file_map[selected_rated_key]))
 
-# Statistics Dashboard
+# STATISTICS DASHBOARD
 st.markdown("---")
-st.header("Evaluation Statistics")
+st.header("📊 Evaluation Statistics")
 
 if os.path.exists(RATINGS_FILE):
 
     df = load_ratings()
 
-    numeric_cols = ["naturalness", "clarity", "pronunciation", "consistency"]
-    for col in numeric_cols:
-        if col not in df.columns:
-            df[col] = 0.0
+    metrics = [
+        "naturalness",
+        "clarity",
+        "pronunciation",
+        "consistency",
+    ]
 
     total = len(df)
-    unique = df["audio_path"].nunique() if "audio_path" in df.columns else df["audio"].nunique()
+    unique = df["audio_path"].nunique()
 
-    avg_scores = df[numeric_cols].mean()
+    avg_scores = df[metrics].mean()
     overall = avg_scores.mean()
 
     c1, c2, c3 = st.columns(3)
 
     c1.metric("Ratings Submitted", total)
     c2.metric("Unique Audios Rated", unique)
-    c3.metric("Overall Avg Score", round(overall, 2))
+    c3.metric("Overall Avg", round(overall, 2))
 
     st.subheader("Parameter Averages")
     st.dataframe(avg_scores.round(2))
 
-    st.subheader("Model Comparison")
-    model_scores = df.groupby("model")[numeric_cols].mean().round(2)
-    model_scores["overall"] = model_scores.mean(axis=1).round(2)
-    model_scores["ratings_count"] = df.groupby("model").size()
-    st.dataframe(model_scores, width="stretch")
+    # MODEL COMPARISON
+    st.subheader("Model Benchmark Comparison")
 
-    if "sarvam" in model_scores.index and "elevenlabs" in model_scores.index:
-        delta = (
-            model_scores.loc["sarvam", numeric_cols + ["overall"]]
-            - model_scores.loc["elevenlabs", numeric_cols + ["overall"]]
-        ).round(2)
-        delta_df = pd.DataFrame(delta).T
-        delta_df.index = ["sarvam_minus_elevenlabs"]
-        st.subheader("Direct Delta (Sarvam - ElevenLabs)")
-        st.dataframe(delta_df, width="stretch")
+    model_scores = df.groupby("model")[metrics].mean()
+    model_scores["overall"] = model_scores.mean(axis=1)
+
+    st.dataframe(model_scores.round(2))
+
+    if {"sarvam", "elevenlabs"}.issubset(model_scores.index):
+
+        winner = model_scores["overall"].idxmax()
+
+        st.success(
+            f" Current Leader: {winner.upper()}"
+        )
