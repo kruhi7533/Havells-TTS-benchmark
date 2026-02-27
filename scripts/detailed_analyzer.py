@@ -15,8 +15,8 @@ VOICE_ELEVEN = "vYENaCJHl4vFKNDYPr8y"
 MODEL_SARVAM = "bulbul:v3"
 VOICE_SARVAM = "priya"
 
-RAW_LOG_PATH = "logs/latency_raw.csv"
-OUTPUT_EXCEL = "outputs/detailed_benchmark_report.xlsx"
+RAW_LOG_PATH = "../logs/latency_raw.csv"
+OUTPUT_EXCEL = "../outputs/detailed_benchmark_report.xlsx"
 
 def get_wav_info(file_path):
     try:
@@ -66,7 +66,8 @@ def analyze():
         
         # Absolute path for processing
         # benchmark_runner uses ../outputs, so from root it's outputs/
-        abs_output_path = output_file.replace("../", "")
+       # Convert relative path to absolute safely
+        abs_output_path = os.path.abspath(os.path.join(os.path.dirname(__file__), output_file)) 
         
         char_count = len(text)
         word_count = len(text.split())
@@ -114,7 +115,7 @@ def analyze():
 
     results_df = pd.DataFrame(analyzed_data)
     
-    os.makedirs("outputs", exist_ok=True)
+    os.makedirs(os.path.dirname(OUTPUT_EXCEL), exist_ok=True)
     with pd.ExcelWriter(OUTPUT_EXCEL, engine="xlsxwriter") as writer:
         results_df.to_excel(writer, sheet_name="Full Analysis", index=False)
         
