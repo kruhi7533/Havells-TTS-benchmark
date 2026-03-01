@@ -24,7 +24,8 @@ def generate_elevenlabs_audio(text, voice_id, output_path):
     if response.status_code != 200:
         return False, latency, response.text
 
-    with open(output_path, "wb") as f:
-        f.write(response.content)
+    if output_path:
+        with open(output_path, "wb") as f:
+            f.write(response.content)
 
     return True, latency, "Success"
