@@ -31,7 +31,8 @@ def generate_sarvam_audio(text, output_path):
     audio_base64 = response_json["audios"][0]
     audio_bytes = base64.b64decode(audio_base64)
 
-    with open(output_path, "wb") as f:
-        f.write(audio_bytes)
+    if output_path:
+        with open(output_path, "wb") as f:
+            f.write(audio_bytes)
 
     return True, latency, "Success"

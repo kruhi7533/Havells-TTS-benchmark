@@ -22,6 +22,41 @@ detailed_analyzer.analyze()
 # =========================
 english_df = pd.read_csv("../logs/english_latency_raw.csv")
 multilingual_df = pd.read_csv("../logs/latency_raw_multilingual.csv")
+# =========================
+## =========================
+# CALCULATE SEQUENTIAL SUMMARY PER MODEL
+# =========================
+english_success = english_df[english_df["status"] == "Success"].copy()
+
+summary_rows = []
+
+for model_name in english_success["model"].unique():
+
+    model_df = english_success[english_success["model"] == model_name]
+    latencies = model_df["latency_seconds"] * 1000
+
+    if len(latencies) > 0:
+        avg = latencies.mean()
+        p95 = latencies.quantile(0.95)
+        std = latencies.std()
+        min_val = latencies.min()
+        max_val = latencies.max()
+        total_time = latencies.sum() / 1000
+        throughput = len(latencies) / total_time if total_time > 0 else 0
+    else:
+        avg = p95 = std = min_val = max_val = throughput = 0
+
+    summary_rows.append({
+        "model": model_name,
+        "avg_latency_ms": round(avg, 2),
+        "p95_latency_ms": round(p95, 2),
+        "std_dev_ms": round(std, 2),
+        "min_latency_ms": round(min_val, 2),
+        "max_latency_ms": round(max_val, 2),
+        "throughput_req_per_sec": round(throughput, 2)
+    })
+
+english_summary_df = pd.DataFrame(summary_rows)
 
 english_detailed_df = pd.read_excel(
     "../outputs/detailed_english.xlsx",
@@ -57,6 +92,8 @@ with pd.ExcelWriter("tts_benchmark_report.xlsx", engine="xlsxwriter") as writer:
     # ✅ Raw Sheets
     english_df.to_excel(writer, sheet_name="English Raw", index=False)
     multilingual_df.to_excel(writer, sheet_name="Multilingual Raw", index=False)
+    # ✅ Sequential Summary Sheet
+    english_summary_df.to_excel(writer, sheet_name="Sequential Summary", index=False) 
 
     if batch_df is not None:
         batch_df.to_excel(writer, sheet_name="Batch Averages", index=False)
@@ -132,18 +169,16 @@ with pd.ExcelWriter("tts_benchmark_report.xlsx", engine="xlsxwriter") as writer:
     if "text" in multilingual_df.columns:
         text_index = multilingual_df.columns.get_loc("text")
         multi_sheet.set_column(text_index, text_index, 50, wrap_format)
-
+     # =========================
+    # FORMAT SEQUENTIAL SUMMARY
     # =========================
-    # FORMAT BATCH
-    # =========================
-    if batch_df is not None:
-        batch_sheet = writer.sheets["Batch Averages"]
-        batch_sheet.freeze_panes(1, 0)
+    seq_sheet = writer.sheets["Sequential Summary"]
+    seq_sheet.freeze_panes(1, 0)
 
-        for col_num, col_name in enumerate(batch_df.columns):
-            batch_sheet.write(0, col_num, col_name, header_format)
+    for col_num, col_name in enumerate(english_summary_df.columns):
+        seq_sheet.write(0, col_num, col_name, header_format)
 
-        batch_sheet.set_column(0, len(batch_df.columns)-1, 22, center_format)
+    seq_sheet.set_column(0, len(english_summary_df.columns)-1, 22, center_format)
 
     # =========================
     # FORMAT CONCURRENCY
