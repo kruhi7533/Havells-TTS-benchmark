@@ -11,8 +11,8 @@ RATINGS_FILE = "ratings.csv"
 AUDIO_EXTENSIONS = (".wav", ".mp3", ".mpeg")
 
 SOURCE_DIRS = {
-    "sarvam": ["outputs/sarvam"],
-    "elevenlabs": ["outputs/elevenlabs"],
+    "sarvam": ["outputs/sarvam/english"],
+    "elevenlabs": ["outputs/elevenlabs/english"],
 }
 
 
@@ -140,19 +140,6 @@ if not ratings_df.empty:
         normalize_path(p)
         for p in rated_subset["audio_path"]
     }
-
-# Progress Tracking
-if audio_files:
-    total_files = len(audio_files)
-    rated_count = len(rated_paths)
-
-    progress = rated_count / total_files
-
-    st.progress(progress)
-    st.caption(
-        f"Progress: {rated_count}/{total_files} "
-        f"({progress*100:.1f}%)"
-    )
 
 # Evaluation Section
 if audio_files:
@@ -338,7 +325,27 @@ if os.path.exists(RATINGS_FILE):
     model_scores = df.groupby("model")[metrics].mean()
     model_scores["overall"] = model_scores.mean(axis=1)
 
+    # Add count of audios tested for each model
+    audio_counts = df.groupby("model")["audio_path"].nunique()
+    model_scores["audio_count"] = audio_counts
+
+    # Extract language from audio_path
+    df['language'] = df['audio_path'].str.extract(r'outputs\\[^\\]+\\([^\\]+)\\')
+
+    # Validate extracted language
+    if df['language'].isnull().any():
+        st.warning("Some audio paths have invalid or missing language information.")
+        df = df.dropna(subset=['language'])
+
+    # Add count of audios tested per language per model
+    language_audio_counts = df.groupby(["model", "language"])["audio_path"].nunique()
+    language_audio_counts = language_audio_counts.reset_index()
+    language_audio_counts.columns = ["Model", "Language", "Audio Count"]
+
     st.dataframe(model_scores.round(2))
+
+    st.subheader("Language-wise Audio Counts per Model")
+    st.dataframe(language_audio_counts)
 
     if {"sarvam", "elevenlabs"}.issubset(model_scores.index):
 
@@ -347,3 +354,4 @@ if os.path.exists(RATINGS_FILE):
         st.success(
             f" Current Leader: {winner.upper()}"
         )
+
