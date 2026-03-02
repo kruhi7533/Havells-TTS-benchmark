@@ -11,8 +11,8 @@ RATINGS_FILE = "ratings.csv"
 AUDIO_EXTENSIONS = (".wav", ".mp3", ".mpeg")
 
 SOURCE_DIRS = {
-    "sarvam": ["outputs/sarvam/hindi"],
-    "elevenlabs": ["outputs/elevenlabs/hindi"],
+    "sarvam": ["outputs/sarvam/Malayalam"],
+    "elevenlabs": ["outputs/elevenlabs/Malayalam"],
 }
 
 
