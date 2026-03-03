@@ -118,7 +118,7 @@ def run_detailed_analysis(raw_log_path, output_excel_path):
             "word_count": word_count,
             "latency_ms": round(latency_ms, 2),
             "audio_duration_sec": round(audio_duration_sec, 3),
-            "total_latency_ms": round(total_latency_ms, 2),
+           
             "throughput_chars_per_sec": round(throughput, 2),
             "audio_size_bytes": audio_size_bytes,
             "sample_rate": sample_rate,
