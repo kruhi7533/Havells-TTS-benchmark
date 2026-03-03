@@ -11,8 +11,8 @@ RATINGS_FILE = "ratings.csv"
 AUDIO_EXTENSIONS = (".wav", ".mp3", ".mpeg")
 
 SOURCE_DIRS = {
-    "sarvam": ["outputs/sarvam/Malayalam"],
-    "elevenlabs": ["outputs/elevenlabs/Malayalam"],
+    "sarvam": ["outputs/sarvam/hindi"],
+    "elevenlabs": ["outputs/elevenlabs/hindi"],
 }
 
 
@@ -346,6 +346,27 @@ if os.path.exists(RATINGS_FILE):
 
     st.subheader("Language-wise Audio Counts per Model")
     st.dataframe(language_audio_counts)
+
+    # Language-wise averages for each parameter
+    st.subheader("Language-wise Parameter Averages")
+
+    language_model_scores = df.groupby(["language", "model"])[metrics].mean()
+    language_model_scores["overall"] = language_model_scores.mean(axis=1)
+    language_model_scores = language_model_scores.reset_index()
+
+    st.dataframe(language_model_scores.round(2))
+
+    # Determine winners for each language
+    st.subheader("Winners by Language")
+
+    winners = language_model_scores.loc[
+        language_model_scores.groupby("language")["overall"].idxmax()
+    ]
+
+    winners = winners[["language", "model", "overall"]]
+    winners.columns = ["Language", "Winner Model", "Overall Avg"]
+
+    st.dataframe(winners.round(2))
 
     if {"sarvam", "elevenlabs"}.issubset(model_scores.index):
 
