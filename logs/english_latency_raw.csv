@@ -340,3 +340,179 @@ timestamp,language,text,model,latency_seconds,status,output_file
 2026-03-03 16:54:24.666033,english,Turn on office AC 1 and set to silent mode.,Sarvam,2.282940149307251,Success,../outputs/sarvam/english/english_168.wav
 2026-03-03 16:54:28.825376,english,Turn on air purifier in the office.,ElevenLabs,1.539541244506836,Success,../outputs/elevenlabs/english/english_169.mp3
 2026-03-03 16:54:28.825376,english,Turn on air purifier in the office.,Sarvam,1.573584794998169,Success,../outputs/sarvam/english/english_169.wav
+2026-03-04 00:10:26.610298,english,Turn on bedroom AC.,ElevenLabs,1.5451006889343262,Success,../outputs/elevenlabs/english/english_170.mp3
+2026-03-04 00:10:26.610298,english,Turn on bedroom AC.,Sarvam,1.1230664253234863,Success,../outputs/sarvam/english/english_170.wav
+2026-03-04 00:10:29.286706,english,Turn on bedroom A C.,ElevenLabs,1.7331631183624268,Success,../outputs/elevenlabs/english/english_171.mp3
+2026-03-04 00:10:29.286706,english,Turn on bedroom A C.,Sarvam,1.2048718929290771,Success,../outputs/sarvam/english/english_171.wav
+2026-03-04 00:10:32.238820,english,Turn on the A.C. in the bedroom.,ElevenLabs,1.6484720706939697,Success,../outputs/elevenlabs/english/english_172.mp3
+2026-03-04 00:10:32.238820,english,Turn on the A.C. in the bedroom.,Sarvam,1.5074453353881836,Success,../outputs/sarvam/english/english_172.wav
+2026-03-04 00:10:35.408804,english,Switch off bedroom A-C immediately.,ElevenLabs,1.4547533988952637,Success,../outputs/elevenlabs/english/english_173.mp3
+2026-03-04 00:10:35.408804,english,Switch off bedroom A-C immediately.,Sarvam,1.4381585121154785,Success,../outputs/sarvam/english/english_173.wav
+2026-03-04 00:10:38.317170,english,Turn on AC 01 in bedroom.,ElevenLabs,1.6622462272644043,Success,../outputs/elevenlabs/english/english_174.mp3
+2026-03-04 00:10:38.317170,english,Turn on AC 01 in bedroom.,Sarvam,1.664311170578003,Success,../outputs/sarvam/english/english_174.wav
+2026-03-04 00:10:41.657143,english,Turn on AC 001 in bedroom.,ElevenLabs,2.0459253787994385,Success,../outputs/elevenlabs/english/english_175.mp3
+2026-03-04 00:10:41.657143,english,Turn on AC 001 in bedroom.,Sarvam,1.7088985443115234,Success,../outputs/sarvam/english/english_175.wav
+2026-03-04 00:10:45.428832,english,Turn on bedroom AC v2.,ElevenLabs,2.2833595275878906,Success,../outputs/elevenlabs/english/english_176.mp3
+2026-03-04 00:10:45.428832,english,Turn on bedroom AC v2.,Sarvam,1.7387974262237549,Success,../outputs/sarvam/english/english_176.wav
+2026-03-04 00:10:49.465668,english,Turn on bedroom AC version 2.0.,ElevenLabs,1.6506061553955078,Success,../outputs/elevenlabs/english/english_177.mp3
+2026-03-04 00:10:49.465668,english,Turn on bedroom AC version 2.0.,Sarvam,1.6960124969482422,Success,../outputs/sarvam/english/english_177.wav
+2026-03-04 00:10:52.827250,english,Enable LED in bedroom AC.,ElevenLabs,1.4113037586212158,Success,../outputs/elevenlabs/english/english_178.mp3
+2026-03-04 00:10:52.827250,english,Enable LED in bedroom AC.,Sarvam,1.413628101348877,Success,../outputs/sarvam/english/english_178.wav
+2026-03-04 00:10:55.668469,english,Enable L E D in bedroom AC.,ElevenLabs,1.4518284797668457,Success,../outputs/elevenlabs/english/english_179.mp3
+2026-03-04 00:10:55.668469,english,Enable L E D in bedroom AC.,Sarvam,1.827033519744873,Success,../outputs/sarvam/english/english_179.wav
+2026-03-04 00:10:58.964430,english,Turn off WiFi in bedroom AC.,ElevenLabs,1.6489448547363281,Success,../outputs/elevenlabs/english/english_180.mp3
+2026-03-04 00:10:58.964430,english,Turn off WiFi in bedroom AC.,Sarvam,1.5622293949127197,Success,../outputs/sarvam/english/english_180.wav
+2026-03-04 00:11:02.188477,english,Enable Wi-Fi control in bedroom AC.,ElevenLabs,1.5064921379089355,Success,../outputs/elevenlabs/english/english_181.mp3
+2026-03-04 00:11:02.188477,english,Enable Wi-Fi control in bedroom AC.,Sarvam,1.6752657890319824,Success,../outputs/sarvam/english/english_181.wav
+2026-03-04 00:11:05.385230,english,Check CPU status in bedroom AC.,ElevenLabs,1.7819325923919678,Success,../outputs/elevenlabs/english/english_182.mp3
+2026-03-04 00:11:05.385230,english,Check CPU status in bedroom AC.,Sarvam,1.688511848449707,Success,../outputs/sarvam/english/english_182.wav
+2026-03-04 00:11:08.879668,english,Check G P U status in bedroom AC.,ElevenLabs,1.7734417915344238,Success,../outputs/elevenlabs/english/english_183.mp3
+2026-03-04 00:11:08.879668,english,Check G P U status in bedroom AC.,Sarvam,1.7128217220306396,Success,../outputs/sarvam/english/english_183.wav
+2026-03-04 00:11:12.382906,english,Set temperature to 0 degrees in bedroom AC.,ElevenLabs,1.9477283954620361,Success,../outputs/elevenlabs/english/english_184.mp3
+2026-03-04 00:11:12.382906,english,Set temperature to 0 degrees in bedroom AC.,Sarvam,1.841752052307129,Success,../outputs/sarvam/english/english_184.wav
+2026-03-04 00:11:16.189321,english,Set temperature to 01 degrees in bedroom AC.,ElevenLabs,1.8446691036224365,Success,../outputs/elevenlabs/english/english_185.mp3
+2026-03-04 00:11:16.189321,english,Set temperature to 01 degrees in bedroom AC.,Sarvam,1.9033751487731934,Success,../outputs/sarvam/english/english_185.wav
+2026-03-04 00:11:19.951829,english,Set temperature to 09 degrees in bedroom AC.,ElevenLabs,2.081204414367676,Success,../outputs/elevenlabs/english/english_186.mp3
+2026-03-04 00:11:19.951829,english,Set temperature to 09 degrees in bedroom AC.,Sarvam,1.8151235580444336,Success,../outputs/sarvam/english/english_186.wav
+2026-03-04 00:11:23.862174,english,Set temperature to 16.5 degrees in bedroom AC.,ElevenLabs,2.26200270652771,Success,../outputs/elevenlabs/english/english_187.mp3
+2026-03-04 00:11:23.862174,english,Set temperature to 16.5 degrees in bedroom AC.,Sarvam,2.875054121017456,Success,../outputs/sarvam/english/english_187.wav
+2026-03-04 00:11:29.016960,english,Set temperature to minus 5 degrees in bedroom AC.,ElevenLabs,2.1664552688598633,Success,../outputs/elevenlabs/english/english_188.mp3
+2026-03-04 00:11:29.016960,english,Set temperature to minus 5 degrees in bedroom AC.,Sarvam,1.953545331954956,Success,../outputs/sarvam/english/english_188.wav
+2026-03-04 00:11:33.150969,english,Set temperature to +5 degrees in bedroom AC.,ElevenLabs,1.8822829723358154,Success,../outputs/elevenlabs/english/english_189.mp3
+2026-03-04 00:11:33.150969,english,Set temperature to +5 degrees in bedroom AC.,Sarvam,2.0274763107299805,Success,../outputs/sarvam/english/english_189.wav
+2026-03-04 00:11:37.073703,english,Set switch off timer to 000 minutes in bedroom AC.,ElevenLabs,2.1914725303649902,Success,../outputs/elevenlabs/english/english_190.mp3
+2026-03-04 00:11:37.073703,english,Set switch off timer to 000 minutes in bedroom AC.,Sarvam,2.215571641921997,Success,../outputs/sarvam/english/english_190.wav
+2026-03-04 00:11:41.495829,english,Set switch off timer to 9999 minutes in bedroom AC.,ElevenLabs,2.645627021789551,Success,../outputs/elevenlabs/english/english_191.mp3
+2026-03-04 00:11:41.495829,english,Set switch off timer to 9999 minutes in bedroom AC.,Sarvam,3.223764419555664,Success,../outputs/sarvam/english/english_191.wav
+2026-03-04 00:11:47.379060,english,Set fan speed to level 0 in bedroom AC.,ElevenLabs,1.9881515502929688,Success,../outputs/elevenlabs/english/english_192.mp3
+2026-03-04 00:11:47.379060,english,Set fan speed to level 0 in bedroom AC.,Sarvam,2.54744553565979,Success,../outputs/sarvam/english/english_192.wav
+2026-03-04 00:11:51.925656,english,Set fan speed to level 10 in bedroom AC.,ElevenLabs,2.1331045627593994,Success,../outputs/elevenlabs/english/english_193.mp3
+2026-03-04 00:11:51.925656,english,Set fan speed to level 10 in bedroom AC.,Sarvam,2.6119368076324463,Success,../outputs/sarvam/english/english_193.wav
+2026-03-04 00:11:56.683428,english,Turn on bedroom AC A1.,ElevenLabs,1.6520156860351562,Success,../outputs/elevenlabs/english/english_194.mp3
+2026-03-04 00:11:56.683428,english,Turn on bedroom AC A1.,Sarvam,1.9920463562011719,Success,../outputs/sarvam/english/english_194.wav
+2026-03-04 00:57:31.906566,english,Turn on bedroom AC A01.,ElevenLabs,1.525120735168457,Success,../outputs/elevenlabs/english/english_195.mp3
+2026-03-04 00:57:31.906566,english,Turn on bedroom AC A01.,Sarvam,1.645862102508545,Success,../outputs/sarvam/english/english_195.wav
+2026-03-04 00:57:35.088428,english,Turn on bedroom AC A001.,ElevenLabs,1.6812412738800049,Success,../outputs/elevenlabs/english/english_196.mp3
+2026-03-04 00:57:35.088428,english,Turn on bedroom AC A001.,Sarvam,1.772101879119873,Success,../outputs/sarvam/english/english_196.wav
+2026-03-04 00:57:38.558200,english,Turn on bedroom AC B-12.,ElevenLabs,2.002084732055664,Success,../outputs/elevenlabs/english/english_197.mp3
+2026-03-04 00:57:38.558200,english,Turn on bedroom AC B-12.,Sarvam,1.4295659065246582,Success,../outputs/sarvam/english/english_197.wav
+2026-03-04 00:57:42.004833,english,Turn on bedroom AC AC-101.,ElevenLabs,1.8346788883209229,Success,../outputs/elevenlabs/english/english_198.mp3
+2026-03-04 00:57:42.004833,english,Turn on bedroom AC AC-101.,Sarvam,1.684814214706421,Success,../outputs/sarvam/english/english_198.wav
+2026-03-04 00:57:45.536343,english,Turn on bedroom AC AC101X.,ElevenLabs,2.2214365005493164,Success,../outputs/elevenlabs/english/english_199.mp3
+2026-03-04 00:57:45.536343,english,Turn on bedroom AC AC101X.,Sarvam,2.1165263652801514,Success,../outputs/sarvam/english/english_199.wav
+2026-03-04 00:57:49.885693,english,Turn on bedroom AC version v1.2.3.,ElevenLabs,2.2936220169067383,Success,../outputs/elevenlabs/english/english_200.mp3
+2026-03-04 00:57:49.885693,english,Turn on bedroom AC version v1.2.3.,Sarvam,2.1807546615600586,Success,../outputs/sarvam/english/english_200.wav
+2026-03-04 00:57:54.376763,english,Turn on bedroom AC build 2024.01.,ElevenLabs,2.473665714263916,Success,../outputs/elevenlabs/english/english_201.mp3
+2026-03-04 00:57:54.376763,english,Turn on bedroom AC build 2024.01.,Sarvam,2.4530246257781982,Success,../outputs/sarvam/english/english_201.wav
+2026-03-04 00:57:59.317561,english,Turn on bedroom AC #1.,ElevenLabs,1.6597323417663574,Success,../outputs/elevenlabs/english/english_202.mp3
+2026-03-04 00:57:59.317561,english,Turn on bedroom AC #1.,Sarvam,1.6597669124603271,Success,../outputs/sarvam/english/english_202.wav
+2026-03-04 00:58:02.653065,english,Turn on bedroom AC @home.,ElevenLabs,1.663381576538086,Success,../outputs/elevenlabs/english/english_203.mp3
+2026-03-04 00:58:02.653065,english,Turn on bedroom AC @home.,Sarvam,1.1336336135864258,Success,../outputs/sarvam/english/english_203.wav
+2026-03-04 00:58:05.464989,english,Turn on bedroom AC %unit.,ElevenLabs,1.4070634841918945,Success,../outputs/elevenlabs/english/english_204.mp3
+2026-03-04 00:58:05.464989,english,Turn on bedroom AC %unit.,Sarvam,1.4064946174621582,Success,../outputs/sarvam/english/english_204.wav
+2026-03-04 00:58:08.290966,english,Turn on bedroom AC & purifier.,ElevenLabs,1.7202277183532715,Success,../outputs/elevenlabs/english/english_205.mp3
+2026-03-04 00:58:08.290966,english,Turn on bedroom AC & purifier.,Sarvam,1.6373848915100098,Success,../outputs/sarvam/english/english_205.wav
+2026-03-04 00:58:11.663824,english,Turn on bedroom AC / purifier combo.,ElevenLabs,1.9716486930847168,Success,../outputs/elevenlabs/english/english_206.mp3
+2026-03-04 00:58:11.663824,english,Turn on bedroom AC / purifier combo.,Sarvam,2.118462085723877,Success,../outputs/sarvam/english/english_206.wav
+2026-03-04 00:58:15.764038,english,Turn on bedroom AC - main unit.,ElevenLabs,1.5775344371795654,Success,../outputs/elevenlabs/english/english_207.mp3
+2026-03-04 00:58:15.764038,english,Turn on bedroom AC - main unit.,Sarvam,1.6761353015899658,Success,../outputs/sarvam/english/english_207.wav
+2026-03-04 00:58:19.028029,english,Turn on bedroom AC _backup unit.,ElevenLabs,1.7752296924591064,Success,../outputs/elevenlabs/english/english_208.mp3
+2026-03-04 00:58:19.028029,english,Turn on bedroom AC _backup unit.,Sarvam,2.006507158279419,Success,../outputs/sarvam/english/english_208.wav
+2026-03-04 00:58:22.844464,english,Turn on bedroom ac.,ElevenLabs,1.2315378189086914,Success,../outputs/elevenlabs/english/english_209.mp3
+2026-03-04 00:58:22.844464,english,Turn on bedroom ac.,Sarvam,1.1237750053405762,Success,../outputs/sarvam/english/english_209.wav
+2026-03-04 00:58:25.223456,english,Turn on bedroom Ac.,ElevenLabs,1.4162116050720215,Success,../outputs/elevenlabs/english/english_210.mp3
+2026-03-04 00:58:25.223456,english,Turn on bedroom Ac.,Sarvam,1.1627485752105713,Success,../outputs/sarvam/english/english_210.wav
+2026-03-04 00:58:27.830883,english,Turn on bedroom aC.,ElevenLabs,1.7281453609466553,Success,../outputs/elevenlabs/english/english_211.mp3
+2026-03-04 00:58:27.830883,english,Turn on bedroom aC.,Sarvam,1.1790297031402588,Success,../outputs/sarvam/english/english_211.wav
+2026-03-04 00:58:30.762913,english,TURN ON BEDROOM AC.,ElevenLabs,2.0468058586120605,Success,../outputs/elevenlabs/english/english_212.mp3
+2026-03-04 00:58:30.762913,english,TURN ON BEDROOM AC.,Sarvam,1.3238635063171387,Success,../outputs/sarvam/english/english_212.wav
+2026-03-04 00:58:34.170867,english,turn on bedroom ac.,ElevenLabs,1.8570308685302734,Success,../outputs/elevenlabs/english/english_213.mp3
+2026-03-04 00:58:34.170867,english,turn on bedroom ac.,Sarvam,1.1938462257385254,Success,../outputs/sarvam/english/english_213.wav
+2026-03-04 00:58:37.248833,english,Turn on AC in AC room.,ElevenLabs,1.6747090816497803,Success,../outputs/elevenlabs/english/english_214.mp3
+2026-03-04 00:58:37.248833,english,Turn on AC in AC room.,Sarvam,1.1430675983428955,Success,../outputs/sarvam/english/english_214.wav
+2026-03-04 00:58:40.080997,english,Turn on bedroom bedroom AC.,ElevenLabs,1.545867919921875,Success,../outputs/elevenlabs/english/english_215.mp3
+2026-03-04 00:58:40.080997,english,Turn on bedroom bedroom AC.,Sarvam,1.5444889068603516,Success,../outputs/sarvam/english/english_215.wav
+2026-03-04 00:58:43.193123,english,Turn on AC in room 1 AC.,ElevenLabs,1.633589506149292,Success,../outputs/elevenlabs/english/english_216.mp3
+2026-03-04 00:58:43.193123,english,Turn on AC in room 1 AC.,Sarvam,1.432349681854248,Success,../outputs/sarvam/english/english_216.wav
+2026-03-04 00:58:46.269295,english,Turn on AC AC AC in bedroom.,ElevenLabs,1.8767859935760498,Success,../outputs/elevenlabs/english/english_217.mp3
+2026-03-04 00:58:46.269295,english,Turn on AC AC AC in bedroom.,Sarvam,1.9105520248413086,Success,../outputs/sarvam/english/english_217.wav
+2026-03-04 00:58:50.082792,english,Turn on the main primary bedroom AC unit.,ElevenLabs,2.1668479442596436,Success,../outputs/elevenlabs/english/english_218.mp3
+2026-03-04 00:58:50.082792,english,Turn on the main primary bedroom AC unit.,Sarvam,1.9084045886993408,Success,../outputs/sarvam/english/english_218.wav
+2026-03-04 00:58:54.185127,english,Turn on the bedroom AC that is not off.,ElevenLabs,1.613966703414917,Success,../outputs/elevenlabs/english/english_219.mp3
+2026-03-04 00:58:54.185127,english,Turn on the bedroom AC that is not off.,Sarvam,1.799696683883667,Success,../outputs/sarvam/english/english_219.wav
+2026-03-04 00:59:03.436375,english,Turn on bedroom AC and turn on bedroom AC again.,ElevenLabs,1.6041522026062012,Success,../outputs/elevenlabs/english/english_220.mp3
+2026-03-04 00:59:03.436375,english,Turn on bedroom AC and turn on bedroom AC again.,Sarvam,2.0258147716522217,Success,../outputs/sarvam/english/english_220.wav
+2026-03-04 00:59:07.092029,english,Turn on bedroom AC and turn off bedroom AC and turn on bedroom AC.,ElevenLabs,3.0845015048980713,Success,../outputs/elevenlabs/english/english_221.mp3
+2026-03-04 00:59:07.092029,english,Turn on bedroom AC and turn off bedroom AC and turn on bedroom AC.,Sarvam,3.056748390197754,Success,../outputs/sarvam/english/english_221.wav
+2026-03-04 00:59:13.259481,english,Turn on bedroom AC bedroom AC bedroom AC.,ElevenLabs,2.5467288494110107,Success,../outputs/elevenlabs/english/english_222.mp3
+2026-03-04 00:59:13.259481,english,Turn on bedroom AC bedroom AC bedroom AC.,Sarvam,2.0210347175598145,Success,../outputs/sarvam/english/english_222.wav
+2026-03-04 00:59:17.853329,english,Turn off off off bedroom AC.,ElevenLabs,1.7069754600524902,Success,../outputs/elevenlabs/english/english_223.mp3
+2026-03-04 00:59:17.853329,english,Turn off off off bedroom AC.,Sarvam,1.5717825889587402,Success,../outputs/sarvam/english/english_223.wav
+2026-03-04 00:59:21.158298,english,Set timer 1 minute in bedroom AC.,ElevenLabs,1.8115084171295166,Success,../outputs/elevenlabs/english/english_224.mp3
+2026-03-04 00:59:21.158298,english,Set timer 1 minute in bedroom AC.,Sarvam,2.3785626888275146,Success,../outputs/sarvam/english/english_224.wav
+2026-03-04 00:59:25.387378,english,Set timer 01 minute in bedroom AC.,ElevenLabs,1.6789493560791016,Success,../outputs/elevenlabs/english/english_225.mp3
+2026-03-04 00:59:25.387378,english,Set timer 01 minute in bedroom AC.,Sarvam,1.8841285705566406,Success,../outputs/sarvam/english/english_225.wav
+2026-03-04 00:59:28.983637,english,Set timer 1.5 minutes in bedroom AC.,ElevenLabs,2.3891351222991943,Success,../outputs/elevenlabs/english/english_226.mp3
+2026-03-04 00:59:28.983637,english,Set timer 1.5 minutes in bedroom AC.,Sarvam,1.921555757522583,Success,../outputs/sarvam/english/english_226.wav
+2026-03-04 00:59:33.320005,english,Set timer 60.0 minutes in bedroom AC.,ElevenLabs,2.0560009479522705,Success,../outputs/elevenlabs/english/english_227.mp3
+2026-03-04 00:59:33.320005,english,Set timer 60.0 minutes in bedroom AC.,Sarvam,2.2896578311920166,Success,../outputs/sarvam/english/english_227.wav
+2026-03-04 00:59:37.687753,english,Set timer 24 hours in bedroom AC.,ElevenLabs,1.9973852634429932,Success,../outputs/elevenlabs/english/english_228.mp3
+2026-03-04 00:59:37.687753,english,Set timer 24 hours in bedroom AC.,Sarvam,1.9986164569854736,Success,../outputs/sarvam/english/english_228.wav
+2026-03-04 00:59:41.709721,english,Set timer 1440 minutes in bedroom AC.,ElevenLabs,2.0930988788604736,Success,../outputs/elevenlabs/english/english_229.mp3
+2026-03-04 00:59:41.709721,english,Set timer 1440 minutes in bedroom AC.,Sarvam,2.3984389305114746,Success,../outputs/sarvam/english/english_229.wav
+2026-03-04 00:59:46.231207,english,Set timer 1 minute in bedroom AC.,ElevenLabs,1.7129786014556885,Success,../outputs/elevenlabs/english/english_230.mp3
+2026-03-04 00:59:46.231207,english,Set timer 1 minute in bedroom AC.,Sarvam,1.7254688739776611,Success,../outputs/sarvam/english/english_230.wav
+2026-03-04 00:59:49.706671,english,Set timer 01 minute in bedroom AC.,ElevenLabs,1.707186222076416,Success,../outputs/elevenlabs/english/english_231.mp3
+2026-03-04 00:59:49.706671,english,Set timer 01 minute in bedroom AC.,Sarvam,1.7161331176757812,Success,../outputs/sarvam/english/english_231.wav
+2026-03-04 00:59:53.158032,english,Set timer 1.5 minutes in bedroom AC.,ElevenLabs,1.9108850955963135,Success,../outputs/elevenlabs/english/english_232.mp3
+2026-03-04 00:59:53.158032,english,Set timer 1.5 minutes in bedroom AC.,Sarvam,1.9809720516204834,Success,../outputs/sarvam/english/english_232.wav
+2026-03-04 00:59:57.065022,english,Set timer 60.0 minutes in bedroom AC.,ElevenLabs,2.066601514816284,Success,../outputs/elevenlabs/english/english_233.mp3
+2026-03-04 00:59:57.065022,english,Set timer 60.0 minutes in bedroom AC.,Sarvam,2.236095905303955,Success,../outputs/sarvam/english/english_233.wav
+2026-03-04 01:00:01.384735,english,Set timer 24 hours in bedroom AC.,ElevenLabs,2.2208445072174072,Success,../outputs/elevenlabs/english/english_234.mp3
+2026-03-04 01:00:01.384735,english,Set timer 24 hours in bedroom AC.,Sarvam,2.168487310409546,Success,../outputs/sarvam/english/english_234.wav
+2026-03-04 01:00:05.791308,english,Set timer 1440 minutes in bedroom AC.,ElevenLabs,1.943056344985962,Success,../outputs/elevenlabs/english/english_235.mp3
+2026-03-04 01:00:05.791308,english,Set timer 1440 minutes in bedroom AC.,Sarvam,2.7186779975891113,Success,../outputs/sarvam/english/english_235.wav
+2026-03-04 01:00:10.491765,english,Turn on auxiliary mode in bedroom AC.,ElevenLabs,1.4338295459747314,Success,../outputs/elevenlabs/english/english_236.mp3
+2026-03-04 01:00:10.491765,english,Turn on auxiliary mode in bedroom AC.,Sarvam,1.7482314109802246,Success,../outputs/sarvam/english/english_236.wav
+2026-03-04 01:00:13.710999,english,Turn on ventilation mode in bedroom AC.,ElevenLabs,1.6320652961730957,Success,../outputs/elevenlabs/english/english_237.mp3
+2026-03-04 01:00:13.710999,english,Turn on ventilation mode in bedroom AC.,Sarvam,2.11796498298645,Success,../outputs/sarvam/english/english_237.wav
+2026-03-04 01:00:17.487947,english,Turn on dehumidification mode in bedroom AC.,ElevenLabs,2.2202792167663574,Success,../outputs/elevenlabs/english/english_238.mp3
+2026-03-04 01:00:17.487947,english,Turn on dehumidification mode in bedroom AC.,Sarvam,1.7521882057189941,Success,../outputs/sarvam/english/english_238.wav
+2026-03-04 01:00:21.487323,english,Turn on configuration mode in bedroom AC.,ElevenLabs,1.796971321105957,Success,../outputs/elevenlabs/english/english_239.mp3
+2026-03-04 01:00:21.487323,english,Turn on configuration mode in bedroom AC.,Sarvam,1.9722375869750977,Success,../outputs/sarvam/english/english_239.wav
+2026-03-04 01:00:25.267637,english,Turn on automation mode in bedroom AC.,ElevenLabs,1.4995059967041016,Success,../outputs/elevenlabs/english/english_240.mp3
+2026-03-04 01:00:25.267637,english,Turn on automation mode in bedroom AC.,Sarvam,1.6625699996948242,Success,../outputs/sarvam/english/english_240.wav
+2026-03-04 01:00:28.466176,english,Turn on authentication mode in bedroom AC.,ElevenLabs,1.805901288986206,Success,../outputs/elevenlabs/english/english_241.mp3
+2026-03-04 01:00:28.466176,english,Turn on authentication mode in bedroom AC.,Sarvam,1.8674845695495605,Success,../outputs/sarvam/english/english_241.wav
+2026-03-04 01:00:32.175373,english,Set temperature to 100 degrees in bedroom AC.,ElevenLabs,2.372062921524048,Success,../outputs/elevenlabs/english/english_242.mp3
+2026-03-04 01:00:32.175373,english,Set temperature to 100 degrees in bedroom AC.,Sarvam,2.2174198627471924,Success,../outputs/sarvam/english/english_242.wav
+2026-03-04 01:00:36.792963,english,Set temperature to -100 degrees in bedroom AC.,ElevenLabs,1.9721508026123047,Success,../outputs/elevenlabs/english/english_243.mp3
+2026-03-04 01:00:36.792963,english,Set temperature to -100 degrees in bedroom AC.,Sarvam,2.003645896911621,Success,../outputs/sarvam/english/english_243.wav
+2026-03-04 01:00:40.796524,english,Set fan speed to 999 in bedroom AC.,ElevenLabs,2.2574026584625244,Success,../outputs/elevenlabs/english/english_244.mp3
+2026-03-04 01:00:40.796524,english,Set fan speed to 999 in bedroom AC.,Sarvam,2.335205554962158,Success,../outputs/sarvam/english/english_244.wav
+2026-03-04 01:01:04.766223,english,Set brightness to -10 in bedroom AC.,ElevenLabs,2.053812265396118,Success,../outputs/elevenlabs/english/english_245.mp3
+2026-03-04 01:01:04.766223,english,Set brightness to -10 in bedroom AC.,Sarvam,2.3618457317352295,Success,../outputs/sarvam/english/english_245.wav
+2026-03-04 01:01:09.198444,english,Set brightness to 1000 in bedroom AC.,ElevenLabs,1.960996389389038,Success,../outputs/elevenlabs/english/english_246.mp3
+2026-03-04 01:01:09.198444,english,Set brightness to 1000 in bedroom AC.,Sarvam,2.081576108932495,Success,../outputs/sarvam/english/english_246.wav
+2026-03-04 01:01:13.250964,english,Set timer to -1 minutes in bedroom AC.,ElevenLabs,2.099677562713623,Success,../outputs/elevenlabs/english/english_247.mp3
+2026-03-04 01:01:13.250964,english,Set timer to -1 minutes in bedroom AC.,Sarvam,1.7643823623657227,Success,../outputs/sarvam/english/english_247.wav
+2026-03-04 01:01:17.139307,english,Please turn on bedroom AC.,ElevenLabs,1.5407698154449463,Success,../outputs/elevenlabs/english/english_248.mp3
+2026-03-04 01:01:17.139307,english,Please turn on bedroom AC.,Sarvam,1.5988843441009521,Success,../outputs/sarvam/english/english_248.wav
+2026-03-04 01:01:20.296426,english,Kindly turn on bedroom AC.,ElevenLabs,1.6809196472167969,Success,../outputs/elevenlabs/english/english_249.mp3
+2026-03-04 01:01:20.296426,english,Kindly turn on bedroom AC.,Sarvam,1.6943752765655518,Success,../outputs/sarvam/english/english_249.wav
+2026-03-04 01:01:23.681697,english,Turn on bedroom AC now.,ElevenLabs,1.3646423816680908,Success,../outputs/elevenlabs/english/english_250.mp3
+2026-03-04 01:01:23.681697,english,Turn on bedroom AC now.,Sarvam,1.4971237182617188,Success,../outputs/sarvam/english/english_250.wav
+2026-03-04 01:01:26.554467,english,Turn on bedroom AC ASAP.,ElevenLabs,1.7084147930145264,Success,../outputs/elevenlabs/english/english_251.mp3
+2026-03-04 01:01:26.554467,english,Turn on bedroom AC ASAP.,Sarvam,1.3241333961486816,Success,../outputs/sarvam/english/english_251.wav
+2026-03-04 01:01:29.603966,english,Turn on bedroom AC immediately.,ElevenLabs,1.7733802795410156,Success,../outputs/elevenlabs/english/english_252.mp3
+2026-03-04 01:01:29.603966,english,Turn on bedroom AC immediately.,Sarvam,1.2799603939056396,Success,../outputs/sarvam/english/english_252.wav
+2026-03-04 01:01:32.690320,english,Turn on bedroom AC right away.,ElevenLabs,1.5502140522003174,Success,../outputs/elevenlabs/english/english_253.mp3
+2026-03-04 01:01:32.690320,english,Turn on bedroom AC right away.,Sarvam,1.5182123184204102,Success,../outputs/sarvam/english/english_253.wav
+2026-03-04 01:01:35.771098,english,Update bedroom AC to version v1.0.0.,ElevenLabs,2.169304609298706,Success,../outputs/elevenlabs/english/english_254.mp3
+2026-03-04 01:01:35.771098,english,Update bedroom AC to version v1.0.0.,Sarvam,2.4087891578674316,Success,../outputs/sarvam/english/english_254.wav
+2026-03-04 01:01:40.361700,english,Update bedroom AC to version v2.10.,ElevenLabs,2.226874589920044,Success,../outputs/elevenlabs/english/english_255.mp3
+2026-03-04 01:01:40.361700,english,Update bedroom AC to version v2.10.,Sarvam,1.7250618934631348,Success,../outputs/sarvam/english/english_255.wav
+2026-03-04 01:01:44.328183,english,Check firmware version 2024.09.15 in bedroom AC.,ElevenLabs,3.805453300476074,Success,../outputs/elevenlabs/english/english_256.mp3
+2026-03-04 01:01:44.328183,english,Check firmware version 2024.09.15 in bedroom AC.,Sarvam,2.4566993713378906,Success,../outputs/sarvam/english/english_256.wav
+2026-03-04 01:01:50.605386,english,Rollback bedroom AC to version v0.9.,ElevenLabs,2.36153244972229,Success,../outputs/elevenlabs/english/english_257.mp3
+2026-03-04 01:01:50.605386,english,Rollback bedroom AC to version v0.9.,Sarvam,2.3790524005889893,Success,../outputs/sarvam/english/english_257.wav

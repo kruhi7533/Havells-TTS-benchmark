@@ -168,4 +168,93 @@ Turn on living room AC 1.
 Turn on the air purifier in office.
 Turn on office AC 1 and set to silent mode.
 Turn on air purifier in the office.
+Turn on bedroom AC.
+Turn on bedroom A C.
+Turn on the A.C. in the bedroom.
+Switch off bedroom A-C immediately.
+Turn on AC 01 in bedroom.
+Turn on AC 001 in bedroom.
+Turn on bedroom AC v2.
+Turn on bedroom AC version 2.0.
+Enable LED in bedroom AC.
+Enable L E D in bedroom AC.
+Turn off WiFi in bedroom AC.
+Enable Wi-Fi control in bedroom AC.
+Check CPU status in bedroom AC.
+Check G P U status in bedroom AC.
+Set temperature to 0 degrees in bedroom AC.
+Set temperature to 01 degrees in bedroom AC.
+Set temperature to 09 degrees in bedroom AC.
+Set temperature to 16.5 degrees in bedroom AC.
+Set temperature to minus 5 degrees in bedroom AC.
+Set temperature to +5 degrees in bedroom AC.
+Set switch off timer to 000 minutes in bedroom AC.
+Set switch off timer to 9999 minutes in bedroom AC.
+Set fan speed to level 0 in bedroom AC.
+Set fan speed to level 10 in bedroom AC.
+Turn on bedroom AC A1.
+Turn on bedroom AC A01.
+Turn on bedroom AC A001.
+Turn on bedroom AC B-12.
+Turn on bedroom AC AC-101.
+Turn on bedroom AC AC101X.
+Turn on bedroom AC version v1.2.3.
+Turn on bedroom AC build 2024.01.
+Turn on bedroom AC #1.
+Turn on bedroom AC @home.
+Turn on bedroom AC %unit.
+Turn on bedroom AC & purifier.
+Turn on bedroom AC / purifier combo.
+Turn on bedroom AC - main unit.
+Turn on bedroom AC _backup unit.
+Turn on bedroom ac.
+Turn on bedroom Ac.
+Turn on bedroom aC.
+TURN ON BEDROOM AC.
+turn on bedroom ac.
+Turn on AC in AC room.
+Turn on bedroom bedroom AC.
+Turn on AC in room 1 AC.
+Turn on AC AC AC in bedroom.
+Turn on the main primary bedroom AC unit.
+Turn on the bedroom AC that is not off.
+Turn on bedroom AC and turn on bedroom AC again.
+Turn on bedroom AC and turn off bedroom AC and turn on bedroom AC.
+Turn on bedroom AC bedroom AC bedroom AC.
+Turn off off off bedroom AC.
+Set timer 1 minute in bedroom AC.
+Set timer 01 minute in bedroom AC.
+Set timer 1.5 minutes in bedroom AC.
+Set timer 60.0 minutes in bedroom AC.
+Set timer 24 hours in bedroom AC.
+Set timer 1440 minutes in bedroom AC.
+Set timer 1 minute in bedroom AC.
+Set timer 01 minute in bedroom AC.
+Set timer 1.5 minutes in bedroom AC.
+Set timer 60.0 minutes in bedroom AC.
+Set timer 24 hours in bedroom AC.
+Set timer 1440 minutes in bedroom AC.
+Turn on auxiliary mode in bedroom AC.
+Turn on ventilation mode in bedroom AC.
+Turn on dehumidification mode in bedroom AC.
+Turn on configuration mode in bedroom AC.
+Turn on automation mode in bedroom AC.
+Turn on authentication mode in bedroom AC.
+Set temperature to 100 degrees in bedroom AC.
+Set temperature to -100 degrees in bedroom AC.
+Set fan speed to 999 in bedroom AC.
+Set brightness to -10 in bedroom AC.
+Set brightness to 1000 in bedroom AC.
+Set timer to -1 minutes in bedroom AC.
+Please turn on bedroom AC.
+Kindly turn on bedroom AC.
+Turn on bedroom AC now.
+Turn on bedroom AC ASAP.
+Turn on bedroom AC immediately.
+Turn on bedroom AC right away.
+Update bedroom AC to version v1.0.0.
+Update bedroom AC to version v2.10.
+Check firmware version 2024.09.15 in bedroom AC.
+Rollback bedroom AC to version v0.9.
+
 
