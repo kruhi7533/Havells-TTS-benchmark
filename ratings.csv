@@ -165,7 +165,6 @@ elevenlabs,english_79.mp3,outputs\elevenlabs\english\english_79.mp3,3,5,5,5
 elevenlabs,english_80.mp3,outputs\elevenlabs\english\english_80.mp3,3,5,5,5
 elevenlabs,english_81.mp3,outputs\elevenlabs\english\english_81.mp3,3,5,5,5
 elevenlabs,english_82.mp3,outputs\elevenlabs\english\english_82.mp3,3,5,5,5
-<<<<<<< HEAD
 elevenlabs,hindi_0.mp3,outputs\elevenlabs\hindi\hindi_0.mp3,2,4,2,4
 sarvam,hindi_0.wav,outputs\sarvam\hindi\hindi_0.wav,3,4,3,4
 elevenlabs,hindi_1.mp3,outputs\elevenlabs\hindi\hindi_1.mp3,2,3,2,4
@@ -266,7 +265,6 @@ sarvam,hindi_46.wav,outputs\sarvam\hindi\hindi_46.wav,5,5,5,5
 sarvam,hindi_47.wav,outputs\sarvam\hindi\hindi_47.wav,4,5,5,4
 sarvam,hindi_48.wav,outputs\sarvam\hindi\hindi_48.wav,4,5,5,4
 sarvam,hindi_49.wav,outputs\sarvam\hindi\hindi_49.wav,4,5,4,4
-=======
 elevenlabs,tamil_0.mp3,outputs\elevenlabs\Tamil\tamil_0.mp3,3,4,2,2
 sarvam,tamil_0.wav,outputs\sarvam\Tamil\tamil_0.wav,4,4,4,4
 elevenlabs,tamil_1.mp3,outputs\elevenlabs\Tamil\tamil_1.mp3,5,4,5,4
@@ -387,4 +385,38 @@ elevenlabs,malayalam_6.mp3,outputs\elevenlabs\Malayalam\malayalam_6.mp3,1,2,1,1
 elevenlabs,malayalam_7.mp3,outputs\elevenlabs\Malayalam\malayalam_7.mp3,1,2,1,1
 elevenlabs,malayalam_8.mp3,outputs\elevenlabs\Malayalam\malayalam_8.mp3,1,2,1,1
 elevenlabs,malayalam_9.mp3,outputs\elevenlabs\Malayalam\malayalam_9.mp3,1,2,1,1
->>>>>>> metrics
+elevenlabs,english_83.mp3,outputs\elevenlabs\english\english_83.mp3,2,4,4,4
+elevenlabs,english_84.mp3,outputs\elevenlabs\english\english_84.mp3,2,5,5,5
+elevenlabs,english_85.mp3,outputs\elevenlabs\english\english_85.mp3,2,5,5,5
+elevenlabs,english_86.mp3,outputs\elevenlabs\english\english_86.mp3,2,5,5,5
+elevenlabs,english_87.mp3,outputs\elevenlabs\english\english_87.mp3,2,5,5,5
+elevenlabs,english_88.mp3,outputs\elevenlabs\english\english_88.mp3,2,5,5,5
+elevenlabs,english_89.mp3,outputs\elevenlabs\english\english_89.mp3,2,5,5,5
+elevenlabs,english_90.mp3,outputs\elevenlabs\english\english_90.mp3,2,5,5,5
+elevenlabs,english_91.mp3,outputs\elevenlabs\english\english_91.mp3,2,5,5,5
+elevenlabs,english_92.mp3,outputs\elevenlabs\english\english_92.mp3,2,5,5,5
+elevenlabs,english_93.mp3,outputs\elevenlabs\english\english_93.mp3,2,5,5,5
+elevenlabs,english_94.mp3,outputs\elevenlabs\english\english_94.mp3,2,5,5,5
+elevenlabs,english_95.mp3,outputs\elevenlabs\english\english_95.mp3,2,5,5,5
+elevenlabs,english_96.mp3,outputs\elevenlabs\english\english_96.mp3,2,5,4,4
+elevenlabs,english_97.mp3,outputs\elevenlabs\english\english_97.mp3,2,5,5,5
+elevenlabs,english_98.mp3,outputs\elevenlabs\english\english_98.mp3,2,5,5,5
+elevenlabs,english_99.mp3,outputs\elevenlabs\english\english_99.mp3,2,5,5,5
+sarvam,english_83.wav,outputs\sarvam\english\english_83.wav,3,4,5,5
+sarvam,english_84.wav,outputs\sarvam\english\english_84.wav,3,4,5,5
+sarvam,english_85.wav,outputs\sarvam\english\english_85.wav,4,5,5,5
+sarvam,english_86.wav,outputs\sarvam\english\english_86.wav,4,5,5,5
+sarvam,english_87.wav,outputs\sarvam\english\english_87.wav,4,5,4,5
+sarvam,english_88.wav,outputs\sarvam\english\english_88.wav,4,5,5,5
+sarvam,english_89.wav,outputs\sarvam\english\english_89.wav,4,5,5,5
+sarvam,english_90.wav,outputs\sarvam\english\english_90.wav,4,5,5,5
+sarvam,english_91.wav,outputs\sarvam\english\english_91.wav,5,5,5,5
+sarvam,english_92.wav,outputs\sarvam\english\english_92.wav,5,5,5,5
+sarvam,english_93.wav,outputs\sarvam\english\english_93.wav,5,5,5,5
+sarvam,english_94.wav,outputs\sarvam\english\english_94.wav,5,5,5,5
+sarvam,english_95.wav,outputs\sarvam\english\english_95.wav,5,5,4,4
+sarvam,english_96.wav,outputs\sarvam\english\english_96.wav,5,5,4,4
+sarvam,english_97.wav,outputs\sarvam\english\english_97.wav,5,5,5,5
+sarvam,english_98.wav,outputs\sarvam\english\english_98.wav,5,5,4,5
+sarvam,english_99.wav,outputs\sarvam\english\english_99.wav,4,2,4,3
+sarvam,english_100.wav,outputs\sarvam\english\english_100.wav,4,4,4,4
