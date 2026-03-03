@@ -14,7 +14,7 @@ def generate_elevenlabs_audio(text, voice_id, output_path):
 
     payload = {
         "text": text,
-        "model_id": "eleven_multilingual_v2"
+        "model_id": "eleven_v3"
     }
 
     start_time = time.time()
