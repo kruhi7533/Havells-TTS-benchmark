@@ -18,6 +18,7 @@ VOICE_SARVAM = "priya"
 # =========================
 # FILE PATHS
 # =========================
+PROPER_NOUN_LOG = "../logs/propernoun_latency.csv"
 ENGLISH_LOG = "../logs/english_latency_raw.csv"
 MULTI_LOG = "../logs/latency_raw_multilingual.csv"
 
@@ -198,6 +199,35 @@ if __name__ == "__main__":
         concurrency_summary_df = pd.read_csv("../logs/concurrency_summary.csv")
     except:
         concurrency_summary_df = None
+    # =========================
+    # PROPER NOUN PREPARATION
+    # =========================
+    if os.path.exists(PROPER_NOUN_LOG):
+
+        proper_df = pd.read_csv(PROPER_NOUN_LOG)
+        proper_df = proper_df[proper_df["status"] == "Success"]
+
+        proper_pivot = proper_df.pivot_table(
+            index="phrase",
+            columns="model",
+            values="latency_ms"
+        ).reset_index()
+
+        proper_pivot.columns.name = None
+        proper_pivot = proper_pivot.rename(columns={
+            "phrase": "Phrase",
+            "ElevenLabs": "Eleven Latency (ms)",
+            "Sarvam": "Sarvam Latency (ms)"
+        })
+
+        # Add manual evaluation columns
+        proper_pivot["Eleven Pronunciation"] = ""
+        proper_pivot["Sarvam Pronunciation"] = ""
+        proper_pivot["Better Model"] = ""
+        proper_pivot["Notes"] = ""
+
+    else:
+        proper_pivot = None    
 
     # Final Excel
     with pd.ExcelWriter(FINAL_REPORT, engine="xlsxwriter") as writer:
@@ -214,5 +244,62 @@ if __name__ == "__main__":
             concurrency_summary_df.to_excel(
                 writer, sheet_name="Concurrency Summary", index=False
             )
+        # Proper Noun Evaluation Sheet
+        # =========================
+        # PROPER NOUN PREPARATION
+        # =========================
+        if os.path.exists(PROPER_NOUN_LOG):
 
+            proper_df = pd.read_csv(PROPER_NOUN_LOG)
+            proper_df = proper_df[proper_df["status"] == "Success"]
+
+            proper_pivot = proper_df.pivot_table(
+                index="phrase",
+                columns="model",
+                values="latency_ms"
+            ).reset_index()
+
+            proper_pivot.columns.name = None
+            proper_pivot = proper_pivot.rename(columns={
+                "phrase": "phrase",
+                "ElevenLabs": "Eleven Latency (ms)",
+                "Sarvam": "Sarvam Latency (ms)"
+            })
+
+            # =========================
+            # MERGE MANUAL RATINGS HERE
+            # =========================
+            MANUAL_RATING_CSV = "../logs/propernoun_manual_ratings.csv"
+
+            if os.path.exists(MANUAL_RATING_CSV):
+                ratings_df = pd.read_csv(MANUAL_RATING_CSV)
+
+                proper_pivot = proper_pivot.merge(
+                    ratings_df,
+                    on="phrase",
+                    how="left"
+                )
+
+                proper_pivot.rename(columns={
+                    "eleven_score": "Eleven Pronunciation",
+                    "sarvam_score": "Sarvam Pronunciation",
+                    "better_model": "Better Model"
+                }, inplace=True)
+
+            else:
+                # If no manual ratings yet
+                proper_pivot["Eleven Pronunciation"] = ""
+                proper_pivot["Sarvam Pronunciation"] = ""
+                proper_pivot["Better Model"] = ""
+
+            # Rename for final Excel display
+            proper_pivot.rename(columns={
+                "phrase": "Phrase"
+            }, inplace=True)
+
+            # Add Notes column
+            proper_pivot["Notes"] = ""
+
+        else:
+            proper_pivot = None
     print("Final professional benchmark report created!")
