@@ -1,10 +1,9 @@
 {
-    "english.txt": 50,
-    "hindi.txt": 56,
-    "tamil.txt": 50,
-    "bengali.txt": 50,
-    "kannada.txt": 50,
-    "telugu.txt": 50,
-    "malayalam.txt": 50,
-    "gujarati.txt": 50
+    "hindi.txt": 100,
+    "tamil.txt": 100,
+    "bengali.txt": 100,
+    "kannada.txt": 100,
+    "telugu.txt": 100,
+    "malayalam.txt": 100,
+    "gujarati.txt": 100
 }

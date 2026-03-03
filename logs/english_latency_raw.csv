@@ -1,4 +1,104 @@
 timestamp,language,text,model,latency_seconds,status,output_file
+2026-02-24 17:39:11.440805,english,Turn on bedroom air purifier 1.,ElevenLabs,1.2562849521636963,Success,../outputs/elevenlabs/english/english_0.mp3
+2026-02-24 17:39:11.440805,english,Turn on bedroom air purifier 1.,Sarvam,1.4370205402374268,Success,../outputs/sarvam/english/english_0.wav
+2026-02-24 17:39:14.148112,english,Turn on buzzer control in bedroom air purifier 1.,ElevenLabs,1.4049136638641357,Success,../outputs/elevenlabs/english/english_1.mp3
+2026-02-24 17:39:14.148112,english,Turn on buzzer control in bedroom air purifier 1.,Sarvam,1.7626051902770996,Success,../outputs/sarvam/english/english_1.wav
+2026-02-24 17:39:17.328006,english,Set fan speed 4 in bedroom air purifier 1.,ElevenLabs,1.2875967025756836,Success,../outputs/elevenlabs/english/english_2.mp3
+2026-02-24 17:39:17.328006,english,Set fan speed 4 in bedroom air purifier 1.,Sarvam,1.612640380859375,Success,../outputs/sarvam/english/english_2.wav
+2026-02-24 17:39:20.239044,english,Set night mode in bedroom air purifier 1.,ElevenLabs,1.5492019653320312,Success,../outputs/elevenlabs/english/english_3.mp3
+2026-02-24 17:39:20.239044,english,Set night mode in bedroom air purifier 1.,Sarvam,1.8161852359771729,Success,../outputs/sarvam/english/english_3.wav
+2026-02-24 17:39:23.619902,english,Set switch off timer 60 minutes in bedroom air purifier 1.,ElevenLabs,1.4536209106445312,Success,../outputs/elevenlabs/english/english_4.mp3
+2026-02-24 17:39:23.619902,english,Set switch off timer 60 minutes in bedroom air purifier 1.,Sarvam,2.1024837493896484,Success,../outputs/sarvam/english/english_4.wav
+2026-02-24 17:39:27.185005,english,Set ring led brightness to 40 in bedroom air purifier 1.,ElevenLabs,1.3752024173736572,Success,../outputs/elevenlabs/english/english_5.mp3
+2026-02-24 17:39:27.185005,english,Set ring led brightness to 40 in bedroom air purifier 1.,Sarvam,2.2104387283325195,Success,../outputs/sarvam/english/english_5.wav
+2026-02-24 17:39:30.784009,english,Turn on turbo mode and turn off buzzer control in bedroom air purifier 1.,ElevenLabs,1.4666178226470947,Success,../outputs/elevenlabs/english/english_6.mp3
+2026-02-24 17:39:30.784009,english,Turn on turbo mode and turn off buzzer control in bedroom air purifier 1.,Sarvam,2.368981122970581,Success,../outputs/sarvam/english/english_6.wav
+2026-02-24 17:39:34.634523,english,Set switch off timer 720 minutes in bedroom air purifier 1.,ElevenLabs,1.4988279342651367,Success,../outputs/elevenlabs/english/english_7.mp3
+2026-02-24 17:39:34.634523,english,Set switch off timer 720 minutes in bedroom air purifier 1.,Sarvam,2.798443078994751,Success,../outputs/sarvam/english/english_7.wav
+2026-02-24 17:39:38.942798,english,Turn on the air purifier in dining room.,ElevenLabs,1.2264196872711182,Success,../outputs/elevenlabs/english/english_8.mp3
+2026-02-24 17:39:38.942798,english,Turn on the air purifier in dining room.,Sarvam,1.721008062362671,Success,../outputs/sarvam/english/english_8.wav
+2026-02-24 17:39:41.906017,english,What is the status of my bedroom air purifier 1?,ElevenLabs,1.3307771682739258,Success,../outputs/elevenlabs/english/english_9.mp3
+2026-02-24 17:39:41.906017,english,What is the status of my bedroom air purifier 1?,Sarvam,1.920046329498291,Success,../outputs/sarvam/english/english_9.wav
+2026-02-24 17:39:45.169127,english,Turn on dining room air purifier 1.,ElevenLabs,1.2059071063995361,Success,../outputs/elevenlabs/english/english_10.mp3
+2026-02-24 17:39:45.169127,english,Turn on dining room air purifier 1.,Sarvam,1.5920186042785645,Success,../outputs/sarvam/english/english_10.wav
+2026-02-24 17:39:47.979488,english,Set ring led brightness 70 in dining room air purifier 1.,ElevenLabs,1.47430419921875,Success,../outputs/elevenlabs/english/english_11.mp3
+2026-02-24 17:39:47.979488,english,Set ring led brightness 70 in dining room air purifier 1.,Sarvam,2.153395175933838,Success,../outputs/sarvam/english/english_11.wav
+2026-02-24 17:39:51.617898,english,Turn on heater power in dining room air purifier 1.,ElevenLabs,1.3033380508422852,Success,../outputs/elevenlabs/english/english_12.mp3
+2026-02-24 17:39:51.617898,english,Turn on heater power in dining room air purifier 1.,Sarvam,1.8215351104736328,Success,../outputs/sarvam/english/english_12.wav
+2026-02-24 17:39:54.756706,english,Set night mode in dining room air purifier 1.,ElevenLabs,1.2714817523956299,Success,../outputs/elevenlabs/english/english_13.mp3
+2026-02-24 17:39:54.756706,english,Set night mode in dining room air purifier 1.,Sarvam,1.6519768238067627,Success,../outputs/sarvam/english/english_13.wav
+2026-02-24 17:39:57.690159,english,Set switch off timer 180 minutes in dining room air purifier 1.,ElevenLabs,1.5919387340545654,Success,../outputs/elevenlabs/english/english_14.mp3
+2026-02-24 17:39:57.690159,english,Set switch off timer 180 minutes in dining room air purifier 1.,Sarvam,2.683570384979248,Success,../outputs/sarvam/english/english_14.wav
+2026-02-24 17:40:01.975660,english,Turn on buzzer control in dining room air purifier 1.,ElevenLabs,1.3343634605407715,Success,../outputs/elevenlabs/english/english_15.mp3
+2026-02-24 17:40:01.975660,english,Turn on buzzer control in dining room air purifier 1.,Sarvam,2.122076988220215,Success,../outputs/sarvam/english/english_15.wav
+2026-02-24 17:40:05.445404,english,Set fan speed 3 in dining room air purifier 1.,ElevenLabs,1.514941692352295,Success,../outputs/elevenlabs/english/english_16.mp3
+2026-02-24 17:40:05.445404,english,Set fan speed 3 in dining room air purifier 1.,Sarvam,1.8546266555786133,Success,../outputs/sarvam/english/english_16.wav
+2026-02-24 17:40:08.830005,english,Turn on dining room air purifier 1.,ElevenLabs,1.2327344417572021,Success,../outputs/elevenlabs/english/english_17.mp3
+2026-02-24 17:40:08.830005,english,Turn on dining room air purifier 1.,Sarvam,1.4162883758544922,Success,../outputs/sarvam/english/english_17.wav
+2026-02-24 17:40:11.498936,english,Set ring led brightness to 200 in dining room air purifier 1.,ElevenLabs,1.398679256439209,Success,../outputs/elevenlabs/english/english_18.mp3
+2026-02-24 17:40:11.498936,english,Set ring led brightness to 200 in dining room air purifier 1.,Sarvam,2.2421112060546875,Success,../outputs/sarvam/english/english_18.wav
+2026-02-24 17:40:15.152649,english,Set switch off timer 180 minutes in dining room air purifier 100.,ElevenLabs,1.518730878829956,Success,../outputs/elevenlabs/english/english_19.mp3
+2026-02-24 17:40:15.152649,english,Set switch off timer 180 minutes in dining room air purifier 100.,Sarvam,2.661181688308716,Success,../outputs/sarvam/english/english_19.wav
+2026-02-24 17:40:19.345847,english,Turn on the living room air purifier 1.,ElevenLabs,1.2168939113616943,Success,../outputs/elevenlabs/english/english_20.mp3
+2026-02-24 17:40:19.345847,english,Turn on the living room air purifier 1.,Sarvam,1.515456199645996,Success,../outputs/sarvam/english/english_20.wav
+2026-02-24 17:40:22.088356,english,Set switch off timer 60 minutes in living room air purifier 1.,ElevenLabs,1.4488096237182617,Success,../outputs/elevenlabs/english/english_21.mp3
+2026-02-24 17:40:22.088356,english,Set switch off timer 60 minutes in living room air purifier 1.,Sarvam,2.3037164211273193,Success,../outputs/sarvam/english/english_21.wav
+2026-02-24 17:40:25.850540,english,Turn on night mode in the living room air purifier 1.,ElevenLabs,1.3752846717834473,Success,../outputs/elevenlabs/english/english_22.mp3
+2026-02-24 17:40:25.850540,english,Turn on night mode in the living room air purifier 1.,Sarvam,1.6130743026733398,Success,../outputs/sarvam/english/english_22.wav
+2026-02-24 17:40:28.852312,english,Turn off fan power of the living room air purifier 1.,ElevenLabs,1.3220744132995605,Success,../outputs/elevenlabs/english/english_23.mp3
+2026-02-24 17:40:28.852312,english,Turn off fan power of the living room air purifier 1.,Sarvam,1.8269233703613281,Success,../outputs/sarvam/english/english_23.wav
+2026-02-24 17:40:32.016044,english,Turn on fan power and set fan speed 4 in living room air purifier 1.,ElevenLabs,1.575624942779541,Success,../outputs/elevenlabs/english/english_24.mp3
+2026-02-24 17:40:32.016044,english,Turn on fan power and set fan speed 4 in living room air purifier 1.,Sarvam,2.235548496246338,Success,../outputs/sarvam/english/english_24.wav
+2026-02-24 17:40:35.841454,english,Set fan speed 8 in living room air purifier 1.,ElevenLabs,1.3222296237945557,Success,../outputs/elevenlabs/english/english_25.mp3
+2026-02-24 17:40:35.841454,english,Set fan speed 8 in living room air purifier 1.,Sarvam,1.7428951263427734,Success,../outputs/sarvam/english/english_25.wav
+2026-02-24 17:40:38.921090,english,Turn off living room air purifier 1.,ElevenLabs,1.2347607612609863,Success,../outputs/elevenlabs/english/english_26.mp3
+2026-02-24 17:40:38.921090,english,Turn off living room air purifier 1.,Sarvam,1.6854569911956787,Success,../outputs/sarvam/english/english_26.wav
+2026-02-24 17:40:41.853225,english,Turn off living room air purifier 1.,ElevenLabs,1.339562177658081,Success,../outputs/elevenlabs/english/english_27.mp3
+2026-02-24 17:40:41.853225,english,Turn off living room air purifier 1.,Sarvam,1.5030896663665771,Success,../outputs/sarvam/english/english_27.wav
+2026-02-24 17:40:44.706622,english,Set fan speed 2 in living room air purifier 1.,ElevenLabs,1.3224997520446777,Success,../outputs/elevenlabs/english/english_28.mp3
+2026-02-24 17:40:44.706622,english,Set fan speed 2 in living room air purifier 1.,Sarvam,1.7307801246643066,Success,../outputs/sarvam/english/english_28.wav
+2026-02-24 17:40:47.772536,english,What devices do I have in my bedroom?,ElevenLabs,1.2599880695343018,Success,../outputs/elevenlabs/english/english_29.mp3
+2026-02-24 17:40:47.772536,english,What devices do I have in my bedroom?,Sarvam,1.429499864578247,Success,../outputs/sarvam/english/english_29.wav
+2026-02-24 17:40:50.476556,english,Turn on the AC in the bedroom,ElevenLabs,1.2096312046051025,Success,../outputs/elevenlabs/english/english_30.mp3
+2026-02-24 17:40:50.476556,english,Turn on the AC in the bedroom,Sarvam,1.0492708683013916,Success,../outputs/sarvam/english/english_30.wav
+2026-02-24 17:40:52.748465,english,Set temperature 18 degrees in the bedroom AC,ElevenLabs,1.3313086032867432,Success,../outputs/elevenlabs/english/english_31.mp3
+2026-02-24 17:40:52.748465,english,Set temperature 18 degrees in the bedroom AC,Sarvam,1.840881586074829,Success,../outputs/sarvam/english/english_31.wav
+2026-02-24 17:40:55.933147,english,Turn on display mode in the bedroom AC.,ElevenLabs,1.2860658168792725,Success,../outputs/elevenlabs/english/english_32.mp3
+2026-02-24 17:40:55.933147,english,Turn on display mode in the bedroom AC.,Sarvam,1.5112957954406738,Success,../outputs/sarvam/english/english_32.wav
+2026-02-24 17:40:58.742452,english,Turn on the ac in the dining room.,ElevenLabs,1.2011919021606445,Success,../outputs/elevenlabs/english/english_33.mp3
+2026-02-24 17:40:58.742452,english,Turn on the ac in the dining room.,Sarvam,1.109905481338501,Success,../outputs/sarvam/english/english_33.wav
+2026-02-24 17:41:01.066109,english,Turn on office AC 2.,ElevenLabs,1.2518296241760254,Success,../outputs/elevenlabs/english/english_34.mp3
+2026-02-24 17:41:01.066109,english,Turn on office AC 2.,Sarvam,1.196293830871582,Success,../outputs/sarvam/english/english_34.wav
+2026-02-24 17:41:03.525430,english,Set dry mode in bedroom ac.,ElevenLabs,1.2354226112365723,Success,../outputs/elevenlabs/english/english_35.mp3
+2026-02-24 17:41:03.525430,english,Set dry mode in bedroom ac.,Sarvam,1.3685805797576904,Success,../outputs/sarvam/english/english_35.wav
+2026-02-24 17:41:06.155458,english,Turn on sleep mode in bedroom ac.,ElevenLabs,1.2299699783325195,Success,../outputs/elevenlabs/english/english_36.mp3
+2026-02-24 17:41:06.155458,english,Turn on sleep mode in bedroom ac.,Sarvam,1.1816024780273438,Success,../outputs/sarvam/english/english_36.wav
+2026-02-24 17:41:08.592030,english,Set vertical swing to position 5 in bedroom ac.,ElevenLabs,1.4337694644927979,Success,../outputs/elevenlabs/english/english_37.mp3
+2026-02-24 17:41:08.592030,english,Set vertical swing to position 5 in bedroom ac.,Sarvam,1.923370361328125,Success,../outputs/sarvam/english/english_37.wav
+2026-02-24 17:41:11.960110,english,Turn on sky high color in bedroom ac.,ElevenLabs,1.3405053615570068,Success,../outputs/elevenlabs/english/english_38.mp3
+2026-02-24 17:41:11.960110,english,Turn on sky high color in bedroom ac.,Sarvam,2.0597658157348633,Success,../outputs/sarvam/english/english_38.wav
+2026-02-24 17:41:15.372643,english,Turn on living room AC 2 and set it's horizontal swing to position 2.,ElevenLabs,1.5271315574645996,Success,../outputs/elevenlabs/english/english_39.mp3
+2026-02-24 17:41:15.372643,english,Turn on living room AC 2 and set it's horizontal swing to position 2.,Sarvam,2.225322723388672,Success,../outputs/sarvam/english/english_39.wav
+2026-02-24 17:41:19.137391,english,Turn on turbo mode in living room AC 2.,ElevenLabs,1.2488746643066406,Success,../outputs/elevenlabs/english/english_40.mp3
+2026-02-24 17:41:19.137391,english,Turn on turbo mode in living room AC 2.,Sarvam,1.4395356178283691,Success,../outputs/sarvam/english/english_40.wav
+2026-02-24 17:41:21.839769,english,Turn on child lock in bedroom ac.,ElevenLabs,1.183833122253418,Success,../outputs/elevenlabs/english/english_41.mp3
+2026-02-24 17:41:21.839769,english,Turn on child lock in bedroom ac.,Sarvam,1.314295768737793,Success,../outputs/sarvam/english/english_41.wav
+2026-02-24 17:41:24.349995,english,Set fan speed high in office AC 2.,ElevenLabs,1.238053321838379,Success,../outputs/elevenlabs/english/english_42.mp3
+2026-02-24 17:41:24.349995,english,Set fan speed high in office AC 2.,Sarvam,1.4490132331848145,Success,../outputs/sarvam/english/english_42.wav
+2026-02-24 17:41:27.047088,english,Set horizontal swing to auto in bedroom ac.,ElevenLabs,1.2928385734558105,Success,../outputs/elevenlabs/english/english_43.mp3
+2026-02-24 17:41:27.047088,english,Set horizontal swing to auto in bedroom ac.,Sarvam,1.7466681003570557,Success,../outputs/sarvam/english/english_43.wav
+2026-02-24 17:41:30.098182,english,Set temperature 30 degrees in the living room AC 2.,ElevenLabs,1.3274874687194824,Success,../outputs/elevenlabs/english/english_44.mp3
+2026-02-24 17:41:30.098182,english,Set temperature 30 degrees in the living room AC 2.,Sarvam,1.6167213916778564,Success,../outputs/sarvam/english/english_44.wav
+2026-02-24 17:41:33.057446,english,Turn on yoga room AC 1 and set it's switch off timer to 20 minutes.,ElevenLabs,1.565992832183838,Success,../outputs/elevenlabs/english/english_45.mp3
+2026-02-24 17:41:33.057446,english,Turn on yoga room AC 1 and set it's switch off timer to 20 minutes.,Sarvam,2.420850992202759,Success,../outputs/sarvam/english/english_45.wav
+2026-02-24 17:41:37.057817,english,Turn on humicon mode in yoga room AC 1.,ElevenLabs,1.3301539421081543,Success,../outputs/elevenlabs/english/english_46.mp3
+2026-02-24 17:41:37.057817,english,Turn on humicon mode in yoga room AC 1.,Sarvam,1.6475915908813477,Success,../outputs/sarvam/english/english_46.wav
+2026-02-24 17:41:40.047005,english,Turn off child lock mode in bedroom ac.,ElevenLabs,1.2551829814910889,Success,../outputs/elevenlabs/english/english_47.mp3
+2026-02-24 17:41:40.047005,english,Turn off child lock mode in bedroom ac.,Sarvam,1.6548352241516113,Success,../outputs/sarvam/english/english_47.wav
+2026-02-24 17:41:42.969287,english,Turn on eco mode in the ac in bedroom.,ElevenLabs,1.3603956699371338,Success,../outputs/elevenlabs/english/english_48.mp3
+2026-02-24 17:41:42.969287,english,Turn on eco mode in the ac in bedroom.,Sarvam,1.3247573375701904,Success,../outputs/sarvam/english/english_48.wav
+2026-02-24 17:41:45.667548,english,Set light intensity low in the ac in bedroom.,ElevenLabs,1.3251943588256836,Success,../outputs/elevenlabs/english/english_49.mp3
+2026-02-24 17:41:45.667548,english,Set light intensity low in the ac in bedroom.,Sarvam,1.8252489566802979,Success,../outputs/sarvam/english/english_49.wav
 2026-02-27 17:23:45.666484,english,Turn on bedroom AC 2.,ElevenLabs,1.9937725067138672,Success,../outputs/elevenlabs/english/english_50.mp3
 2026-02-27 17:23:45.666484,english,Turn on bedroom AC 2.,Sarvam,1.3907718658447266,Success,../outputs/sarvam/english/english_50.wav
 2026-02-27 17:23:49.058056,english,Set vertical swing to position 4 and horizontal swing to position 3 in bedroom AC 2.,ElevenLabs,1.5237071514129639,Success,../outputs/elevenlabs/english/english_51.mp3
@@ -216,3 +316,27 @@ timestamp,language,text,model,latency_seconds,status,output_file
 2026-03-02 16:52:25.123189,english,Turn on sleep mode in bedroom AC 2.,Sarvam,2.385049343109131,Success,../outputs/sarvam/english/english_156.wav
 2026-03-02 16:52:28.859041,english,Turn on the light in kitchen.,ElevenLabs,1.4723281860351562,Success,../outputs/elevenlabs/english/english_157.mp3
 2026-03-02 16:52:28.859041,english,Turn on the light in kitchen.,Sarvam,2.1645519733428955,Success,../outputs/sarvam/english/english_157.wav
+2026-03-03 16:53:44.727828,english,Turn on the kids room AC 1.,ElevenLabs,2.3304755687713623,Success,../outputs/elevenlabs/english/english_158.mp3
+2026-03-03 16:53:44.727828,english,Turn on the kids room AC 1.,Sarvam,1.737229585647583,Success,../outputs/sarvam/english/english_158.wav
+2026-03-03 16:53:48.811136,english,Set silent mode in kids room AC 1.,ElevenLabs,1.7732057571411133,Success,../outputs/elevenlabs/english/english_159.mp3
+2026-03-03 16:53:48.811136,english,Set silent mode in kids room AC 1.,Sarvam,1.8529200553894043,Success,../outputs/sarvam/english/english_159.wav
+2026-03-03 16:53:52.442563,english,Turn on living room AC 1.,ElevenLabs,1.4710543155670166,Success,../outputs/elevenlabs/english/english_160.mp3
+2026-03-03 16:53:52.442563,english,Turn on living room AC 1.,Sarvam,1.3612470626831055,Success,../outputs/sarvam/english/english_160.wav
+2026-03-03 16:53:55.279951,english,Set moonlight to sky high and switch off timer 44 minutes in living room AC 1.,ElevenLabs,3.003805160522461,Success,../outputs/elevenlabs/english/english_161.mp3
+2026-03-03 16:53:55.279951,english,Set moonlight to sky high and switch off timer 44 minutes in living room AC 1.,Sarvam,4.049790143966675,Success,../outputs/sarvam/english/english_161.wav
+2026-03-03 16:54:02.340112,english,Turn on humicon mode in living room AC 1.,ElevenLabs,2.895519256591797,Success,../outputs/elevenlabs/english/english_162.mp3
+2026-03-03 16:54:02.340112,english,Turn on humicon mode in living room AC 1.,Sarvam,1.8046057224273682,Success,../outputs/sarvam/english/english_162.wav
+2026-03-03 16:54:07.046258,english,Set temperature 10 degrees and fan speed low in living room AC 1.,ElevenLabs,2.235189199447632,Success,../outputs/elevenlabs/english/english_163.mp3
+2026-03-03 16:54:07.046258,english,Set temperature 10 degrees and fan speed low in living room AC 1.,Sarvam,1.8997766971588135,Success,../outputs/sarvam/english/english_163.wav
+2026-03-03 16:54:11.186733,english,What is the status of my living room AC 1?,ElevenLabs,1.9220306873321533,Success,../outputs/elevenlabs/english/english_164.mp3
+2026-03-03 16:54:11.186733,english,What is the status of my living room AC 1?,Sarvam,2.347592353820801,Success,../outputs/sarvam/english/english_164.wav
+2026-03-03 16:54:15.459959,english,Turn on the AC in the dining room.,ElevenLabs,1.3025929927825928,Success,../outputs/elevenlabs/english/english_165.mp3
+2026-03-03 16:54:15.459959,english,Turn on the AC in the dining room.,Sarvam,1.3528416156768799,Success,../outputs/sarvam/english/english_165.wav
+2026-03-03 16:54:18.122075,english,Turn on living room AC 1.,ElevenLabs,1.4000332355499268,Success,../outputs/elevenlabs/english/english_166.mp3
+2026-03-03 16:54:18.122075,english,Turn on living room AC 1.,Sarvam,1.3837313652038574,Success,../outputs/sarvam/english/english_166.wav
+2026-03-03 16:54:20.911479,english,Turn on the air purifier in office.,ElevenLabs,1.6485583782196045,Success,../outputs/elevenlabs/english/english_167.mp3
+2026-03-03 16:54:20.911479,english,Turn on the air purifier in office.,Sarvam,2.098696708679199,Success,../outputs/sarvam/english/english_167.wav
+2026-03-03 16:54:24.666033,english,Turn on office AC 1 and set to silent mode.,ElevenLabs,1.8686821460723877,Success,../outputs/elevenlabs/english/english_168.mp3
+2026-03-03 16:54:24.666033,english,Turn on office AC 1 and set to silent mode.,Sarvam,2.282940149307251,Success,../outputs/sarvam/english/english_168.wav
+2026-03-03 16:54:28.825376,english,Turn on air purifier in the office.,ElevenLabs,1.539541244506836,Success,../outputs/elevenlabs/english/english_169.mp3
+2026-03-03 16:54:28.825376,english,Turn on air purifier in the office.,Sarvam,1.573584794998169,Success,../outputs/sarvam/english/english_169.wav
