@@ -72,6 +72,7 @@ def run_detailed_analysis(raw_log_path, output_excel_path):
         model = row["model"]
         latency_sec = row["latency_seconds"]
         output_file = row["output_file"]
+        language=row.get("language","")
 
         abs_output_path = os.path.abspath(
             os.path.join(os.path.dirname(__file__), output_file)
@@ -112,6 +113,7 @@ def run_detailed_analysis(raw_log_path, output_excel_path):
         analyzed_data.append({
             "run_id": i + 1,
             "timestamp": row["timestamp"],
+            "language":language,
             "provider": model,
             "model_name": model_name,
             "voice": voice,
@@ -199,54 +201,134 @@ if __name__ == "__main__":
         concurrency_summary_df = pd.read_csv("../logs/concurrency_summary.csv")
     except:
         concurrency_summary_df = None
-    # =========================
-    # PROPER NOUN PREPARATION
-    # =========================
-    if os.path.exists(PROPER_NOUN_LOG):
-
-        proper_df = pd.read_csv(PROPER_NOUN_LOG)
-        proper_df = proper_df[proper_df["status"] == "Success"]
-
-        proper_pivot = proper_df.pivot_table(
-            index="phrase",
-            columns="model",
-            values="latency_ms"
-        ).reset_index()
-
-        proper_pivot.columns.name = None
-        proper_pivot = proper_pivot.rename(columns={
-            "phrase": "Phrase",
-            "ElevenLabs": "Eleven Latency (ms)",
-            "Sarvam": "Sarvam Latency (ms)"
-        })
-
-        # Add manual evaluation columns
-        proper_pivot["Eleven Pronunciation"] = ""
-        proper_pivot["Sarvam Pronunciation"] = ""
-        proper_pivot["Better Model"] = ""
-        proper_pivot["Notes"] = ""
-
-    else:
-        proper_pivot = None    
-
     # Final Excel
     with pd.ExcelWriter(FINAL_REPORT, engine="xlsxwriter") as writer:
 
+        # Detailed sheets
         english_detailed_df.to_excel(writer, sheet_name="English Detailed", index=False)
         multilingual_detailed_df.to_excel(writer, sheet_name="Multilingual Detailed", index=False)
 
+        workbook = writer.book
+
+        # =========================
+        # FORMAT ENGLISH DETAILED
+        # =========================
+        ws_eng = writer.sheets["English Detailed"]
+
+        header_format = workbook.add_format({
+            "bold": True,
+            "border": 1,
+            "align": "center",
+            "valign": "middle",
+            "bg_color": "#D9E1F2"
+        })
+
+        for col_num, col_name in enumerate(english_detailed_df.columns):
+            ws_eng.write(0, col_num, col_name, header_format)
+            ws_eng.set_column(col_num, col_num, 22)
+
+        ws_eng.freeze_panes(1, 0)
+
+        # =========================
+        # FORMAT MULTILINGUAL DETAILED
+        # =========================
+        ws_multi = writer.sheets["Multilingual Detailed"]
+
+        for col_num, col_name in enumerate(multilingual_detailed_df.columns):
+            ws_multi.write(0, col_num, col_name, header_format)
+            ws_multi.set_column(col_num, col_num, 22)
+
+        ws_multi.freeze_panes(1, 0)
+
+        # Raw and summary sheets
         english_df.to_excel(writer, sheet_name="English Raw", index=False)
         multilingual_df.to_excel(writer, sheet_name="Multilingual Raw", index=False)
 
         english_summary_df.to_excel(writer, sheet_name="Sequential Summary", index=False)
 
+        # Concurrency summary (if available)
         if concurrency_summary_df is not None:
+
             concurrency_summary_df.to_excel(
-                writer, sheet_name="Concurrency Summary", index=False
+                writer,
+                sheet_name="Concurrency Summary",
+                startrow=0,
+                index=False
             )
-        # Proper Noun Evaluation Sheet
+
+            worksheet = writer.sheets["Concurrency Summary"]
+            worksheet.set_column(0, 12, 22)
+
+            # =========================
+            # FORMATTING
+            # =========================
+            header_format = workbook.add_format({
+                "bold": True,
+                "border": 1,
+                "align": "center",
+                "valign": "middle",
+                "bg_color": "#D9E1F2"
+            })
+
+            cell_format = workbook.add_format({
+                "border": 1,
+                "align": "center"
+            })
+
+            winner_format = workbook.add_format({
+                "border": 1,
+                "align": "center",
+                "bold": True,
+                "bg_color": "#C6EFCE"
+            })
+
+            # Format main table headers
+            for col_num, col_name in enumerate(concurrency_summary_df.columns):
+                worksheet.write(0, col_num, col_name, header_format)
+                worksheet.set_column(col_num, col_num, 18)
+
+            # =========================
+            # MODEL COMPARISON SUMMARY
+            # =========================
+            avg_latency = concurrency_summary_df.groupby("model")["avg_latency_ms"].mean()
+            avg_p95 = concurrency_summary_df.groupby("model")["p95_latency_ms"].mean()
+            avg_throughput = concurrency_summary_df.groupby("model")["throughput_req_per_sec"].mean()
+
+            summary_start = len(concurrency_summary_df) + 8
+
+            worksheet.write(summary_start, 0, "Model Comparison Summary")
+
+            worksheet.write(summary_start + 1, 0, "Metric", header_format)
+            worksheet.write(summary_start + 1, 1, "ElevenLabs", header_format)
+            worksheet.write(summary_start + 1, 2, "Sarvam", header_format)
+            worksheet.write(summary_start + 1, 3, "Better Model", header_format)
+
+            # Avg Latency (lower is better)
+            worksheet.write(summary_start + 2, 0, "Average Latency (ms)", cell_format)
+            worksheet.write(summary_start + 2, 1, avg_latency.get("ElevenLabs", 0), cell_format)
+            worksheet.write(summary_start + 2, 2, avg_latency.get("Sarvam", 0), cell_format)
+
+            better_latency = "ElevenLabs" if avg_latency.get("ElevenLabs", 0) < avg_latency.get("Sarvam", 0) else "Sarvam"
+            worksheet.write(summary_start + 2, 3, better_latency, winner_format)
+
+            # P95 Latency
+            worksheet.write(summary_start + 3, 0, "Average P95 Latency (ms)", cell_format)
+            worksheet.write(summary_start + 3, 1, avg_p95.get("ElevenLabs", 0), cell_format)
+            worksheet.write(summary_start + 3, 2, avg_p95.get("Sarvam", 0), cell_format)
+
+            better_p95 = "ElevenLabs" if avg_p95.get("ElevenLabs", 0) < avg_p95.get("Sarvam", 0) else "Sarvam"
+            worksheet.write(summary_start + 3, 3, better_p95, winner_format)
+
+            # Throughput (higher is better)
+            worksheet.write(summary_start + 4, 0, "Average Throughput (req/sec)", cell_format)
+            worksheet.write(summary_start + 4, 1, avg_throughput.get("ElevenLabs", 0), cell_format)
+            worksheet.write(summary_start + 4, 2, avg_throughput.get("Sarvam", 0), cell_format)
+
+            better_tp = "ElevenLabs" if avg_throughput.get("ElevenLabs", 0) > avg_throughput.get("Sarvam", 0) else "Sarvam"
+            worksheet.write(summary_start + 4, 3, better_tp, winner_format)
+
         # =========================
-        # PROPER NOUN PREPARATION
+        # PROPER NOUN SHEET (if available)
         # =========================
         if os.path.exists(PROPER_NOUN_LOG):
 
@@ -266,9 +348,7 @@ if __name__ == "__main__":
                 "Sarvam": "Sarvam Latency (ms)"
             })
 
-            # =========================
-            # MERGE MANUAL RATINGS HERE
-            # =========================
+            # Merge manual ratings if present
             MANUAL_RATING_CSV = "../logs/propernoun_manual_ratings.csv"
 
             if os.path.exists(MANUAL_RATING_CSV):
@@ -285,7 +365,6 @@ if __name__ == "__main__":
                     "sarvam_score": "Sarvam Pronunciation",
                     "better_model": "Better Model"
                 }, inplace=True)
-
             else:
                 # If no manual ratings yet
                 proper_pivot["Eleven Pronunciation"] = ""
@@ -300,6 +379,10 @@ if __name__ == "__main__":
             # Add Notes column
             proper_pivot["Notes"] = ""
 
-        else:
-            proper_pivot = None
+            proper_pivot.to_excel(
+                writer,
+                sheet_name="Proper Noun Evaluation",
+                index=False
+            )
+
     print("Final professional benchmark report created!")

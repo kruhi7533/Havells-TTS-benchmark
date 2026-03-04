@@ -24,7 +24,7 @@ LANGUAGES = [
     "gujarati"
 ]
 
-MAX_SENTENCES = 100
+MAX_SENTENCES = 101
 
 LOG_DIR = "../logs"
 LOG_PATH = os.path.join(LOG_DIR, "latency_raw_multilingual.csv")

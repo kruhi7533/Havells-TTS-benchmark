@@ -1,3 +1,9 @@
-model,concurrency_level,total_requests,successful_requests,failed_requests,failure_rate_percent,avg_latency_ms,p95_latency_ms,std_dev_ms,min_latency_ms,max_latency_ms,throughput_req_per_sec
-ElevenLabs,5,52,0,52,100.0,0,0,0,0,0,0
-Sarvam,5,52,0,52,100.0,0,0,0,0,0,0
+model,concurrency_level,total_requests,successful_requests,failed_requests,failure_rate_percent,avg_latency_ms,p95_latency_ms,p99_latency_ms,std_dev_ms,min_latency_ms,max_latency_ms,throughput_req_per_sec
+ElevenLabs,1,50,50,0,0.0,1896.02,2554.83,3064.97,427.17,1319.63,3369.04,0.53
+Sarvam,1,50,50,0,0.0,2138.5,3320.36,4490.71,752.53,1091.61,5321.8,0.47
+ElevenLabs,5,50,50,0,0.0,1872.73,2689.15,2999.11,434.35,1238.26,3155.86,2.59
+Sarvam,5,50,50,0,0.0,2156.95,3456.31,4041.94,674.34,1343.26,4388.57,2.25
+ElevenLabs,10,50,50,0,0.0,1940.37,2744.84,2897.76,403.82,1289.71,2943.48,4.86
+Sarvam,10,50,50,0,0.0,2267.67,3353.09,3656.69,616.13,1213.14,3746.64,4.14
+ElevenLabs,20,50,50,0,0.0,1958.38,2857.96,3227.21,475.63,1332.42,3459.6,7.87
+Sarvam,20,50,50,0,0.0,2127.55,3179.94,3464.62,548.26,1219.55,3477.6,7.28

@@ -1400,3 +1400,17 @@ timestamp,language,text,model,latency_seconds,status,output_file
 2026-03-03 19:33:36.326284,gujarati,કિચન AC 2 માં મૂનલાઇટ અનવાઈન્ડ સેટ કરીને ફેન મોડ ચાલુ કરો.,Sarvam,2.4484517574310303,Success,../outputs/sarvam/gujarati/gujarati_98.wav
 2026-03-03 19:33:43.947682,gujarati,સ્ટડીમાં એર પ્યુરીફાયર ચાલુ કરો.,ElevenLabs,2.8465535640716553,Success,../outputs/elevenlabs/gujarati/gujarati_99.mp3
 2026-03-03 19:33:43.947682,gujarati,સ્ટડીમાં એર પ્યુરીફાયર ચાલુ કરો.,Sarvam,2.013762950897217,Success,../outputs/sarvam/gujarati/gujarati_99.wav
+2026-03-04 16:55:52.552890,hindi,बेडरूम एयर प्यूरीफायर 1 में 720 मिनट का स्विच ऑफ टाइमर सेट करें।,ElevenLabs,3.788512706756592,Success,../outputs/elevenlabs/hindi/hindi_100.mp3
+2026-03-04 16:55:52.552890,hindi,बेडरूम एयर प्यूरीफायर 1 में 720 मिनट का स्विच ऑफ टाइमर सेट करें।,Sarvam,3.0554821491241455,Success,../outputs/sarvam/hindi/hindi_100.wav
+2026-03-04 16:55:59.416890,tamil,ஸ்டடி AC 1 ஐ இயக்கி கிச்சன் AC 2 இல் பேன் வேகத்தை ஹை ஆக அமைக்கவும்.,ElevenLabs,3.8240864276885986,Success,../outputs/elevenlabs/tamil/tamil_100.mp3
+2026-03-04 16:55:59.416890,tamil,ஸ்டடி AC 1 ஐ இயக்கி கிச்சன் AC 2 இல் பேன் வேகத்தை ஹை ஆக அமைக்கவும்.,Sarvam,2.7794642448425293,Success,../outputs/sarvam/tamil/tamil_100.wav
+2026-03-04 16:56:06.040388,bengali,স্টাডি AC 1 চালু করে কিচেন AC 2 এ ফ্যান স্পিড হাই সেট করুন।,ElevenLabs,4.037578582763672,Success,../outputs/elevenlabs/bengali/bengali_100.mp3
+2026-03-04 16:56:06.040388,bengali,স্টাডি AC 1 চালু করে কিচেন AC 2 এ ফ্যান স্পিড হাই সেট করুন।,Sarvam,3.5328516960144043,Success,../outputs/sarvam/bengali/bengali_100.wav
+2026-03-04 16:56:13.632940,kannada,ಸ್ಟಡಿ AC 1 ಅನ್ನು ಆನ್ ಮಾಡಿ ಮತ್ತು ಕಿಚನ್ AC 2 ನಲ್ಲಿ ಫ್ಯಾನ್ ವೇಗವನ್ನು ಹೈಗೆ ಹೊಂದಿಸಿ।,ElevenLabs,5.093193292617798,Success,../outputs/elevenlabs/kannada/kannada_100.mp3
+2026-03-04 16:56:13.632940,kannada,ಸ್ಟಡಿ AC 1 ಅನ್ನು ಆನ್ ಮಾಡಿ ಮತ್ತು ಕಿಚನ್ AC 2 ನಲ್ಲಿ ಫ್ಯಾನ್ ವೇಗವನ್ನು ಹೈಗೆ ಹೊಂದಿಸಿ।,Sarvam,6.794787645339966,Success,../outputs/sarvam/kannada/kannada_100.wav
+2026-03-04 16:56:25.544625,telugu,స్టడీ AC 1 ను ఆన్ చేసి కిచెన్ AC 2 లో ఫ్యాన్ వేగం హై గా సెట్ చేయండి।,ElevenLabs,4.355553865432739,Success,../outputs/elevenlabs/telugu/telugu_100.mp3
+2026-03-04 16:56:25.544625,telugu,స్టడీ AC 1 ను ఆన్ చేసి కిచెన్ AC 2 లో ఫ్యాన్ వేగం హై గా సెట్ చేయండి।,Sarvam,2.9266440868377686,Success,../outputs/sarvam/telugu/telugu_100.wav
+2026-03-04 16:56:32.850963,malayalam,സ്റ്റഡി AC 1 ഓൺ ചെയ്ത് കിച്ചൻ AC 2 ൽ ഫാൻ വേഗം ഹൈ ആയി സജ്ജീകരിക്കുക।,ElevenLabs,3.6244053840637207,Success,../outputs/elevenlabs/malayalam/malayalam_100.mp3
+2026-03-04 16:56:32.850963,malayalam,സ്റ്റഡി AC 1 ഓൺ ചെയ്ത് കിച്ചൻ AC 2 ൽ ഫാൻ വേഗം ഹൈ ആയി സജ്ജീകരിക്കുക।,Sarvam,2.756685733795166,Success,../outputs/sarvam/malayalam/malayalam_100.wav
+2026-03-04 16:56:39.250605,gujarati,સ્ટડી AC 1 ચાલુ કરીને કિચન AC 2 માં ફેન સ્પીડ હાઈ સેટ કરો.,ElevenLabs,3.5191783905029297,Success,../outputs/elevenlabs/gujarati/gujarati_100.mp3
+2026-03-04 16:56:39.250605,gujarati,સ્ટડી AC 1 ચાલુ કરીને કિચન AC 2 માં ફેન સ્પીડ હાઈ સેટ કરો.,Sarvam,6.140206575393677,Success,../outputs/sarvam/gujarati/gujarati_100.wav

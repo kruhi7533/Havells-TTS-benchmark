@@ -15,7 +15,7 @@ def generate_sarvam_audio(text, output_path):
 
     payload = {
         "text": text,
-        "target_language_code": "en-IN",
+        "target_language_code": "hi-IN",
         "model": "bulbul:v3",
         "speaker": "priya"
     }
