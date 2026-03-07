@@ -6,8 +6,8 @@ from mutagen.mp3 import MP3
 # =========================
 # COST CONFIG
 # =========================
-COST_SARVAM = 0.0015
-COST_ELEVENLABS = 0.004
+COST_SARVAM = 0.003
+COST_ELEVENLABS = 0.0037
 
 MODEL_ELEVEN = "eleven_v3"
 VOICE_ELEVEN = "vYENaCJHl4vFKNDYPr8y"
@@ -121,7 +121,6 @@ def run_detailed_analysis(raw_log_path, output_excel_path):
             "word_count": word_count,
             "latency_ms": round(latency_ms, 2),
             "audio_duration_sec": round(audio_duration_sec, 3),
-           
             "throughput_chars_per_sec": round(throughput, 2),
             "audio_size_bytes": audio_size_bytes,
             "sample_rate": sample_rate,
@@ -190,11 +189,37 @@ if __name__ == "__main__":
     multilingual_detailed_df = run_detailed_analysis(
         MULTI_LOG, MULTI_DETAIL_OUT
     )
+    # =========================
+    # COST COMPARISON
+    # =========================
+
+    all_data = pd.concat([english_detailed_df, multilingual_detailed_df])
+
+    cost_summary = all_data.groupby("provider")["estimated_cost"].sum()
+
+    cost_eleven = cost_summary.get("ElevenLabs", 0)
+    cost_sarvam = cost_summary.get("Sarvam", 0)
+
+    cost_winner = "Sarvam" if cost_sarvam < cost_eleven else "ElevenLabs"
+
+    print("ElevenLabs total cost:", cost_eleven)
+    print("Sarvam total cost:", cost_sarvam)
+    print("Cheaper provider:", cost_winner)
 
     english_df = pd.read_csv(ENGLISH_LOG)
     multilingual_df = pd.read_csv(MULTI_LOG)
 
     english_summary_df = calculate_sequential_summary(english_df)
+    multilingual_summary_df = multilingual_df[multilingual_df["status"] == "Success"]
+
+    multilingual_summary_df = multilingual_summary_df.groupby(["language","model"]).agg(
+        avg_latency_ms=("latency_seconds", lambda x: round(x.mean()*1000,2)),
+        p95_latency_ms=("latency_seconds", lambda x: round(x.quantile(0.95)*1000,2)),
+        std_dev_ms=("latency_seconds", lambda x: round(x.std()*1000,2)),
+        min_latency_ms=("latency_seconds", lambda x: round(x.min()*1000,2)),
+        max_latency_ms=("latency_seconds", lambda x: round(x.max()*1000,2)),
+        throughput_req_per_sec=("latency_seconds", lambda x: round(len(x)/(x.sum()),2))
+    ).reset_index()
 
     # Optional concurrency
     try:
@@ -241,10 +266,111 @@ if __name__ == "__main__":
         ws_multi.freeze_panes(1, 0)
 
         # Raw and summary sheets
-        english_df.to_excel(writer, sheet_name="English Raw", index=False)
-        multilingual_df.to_excel(writer, sheet_name="Multilingual Raw", index=False)
+        # english_df.to_excel(writer, sheet_name="English Raw", index=False)
+        # multilingual_df.to_excel(writer, sheet_name="Multilingual Raw", index=False)
+        worksheet_seq = workbook.add_worksheet("Sequential Summary")
 
-        english_summary_df.to_excel(writer, sheet_name="Sequential Summary", index=False)
+        header_format = workbook.add_format({
+            "bold": True,
+            "border": 1,
+            "align": "center",
+            "valign": "middle",
+            "bg_color": "#D9E1F2"
+        })
+
+        cell_format = workbook.add_format({
+            "border": 1,
+            "align": "center"
+        })
+
+        winner_format = workbook.add_format({
+            "border": 1,
+            "align": "center",
+            "bold": True,
+            "bg_color": "#C6EFCE"
+        })
+
+        # =========================
+        # ENGLISH SUMMARY
+        # =========================
+        worksheet_seq.write(0,0,"English Sequential Summary")
+
+        english_summary_df.to_excel(
+            writer,
+            sheet_name="Sequential Summary",
+            startrow=2,
+            index=False
+        )
+
+        for col_num, col_name in enumerate(english_summary_df.columns):
+            worksheet_seq.write(2, col_num, col_name, header_format)
+            worksheet_seq.set_column(col_num, col_num, 22)
+
+        # =========================
+        # MULTILINGUAL SUMMARY
+        # =========================
+        start_row_multi = len(english_summary_df) + 6
+
+        worksheet_seq.write(start_row_multi,0,"Multilingual Sequential Summary")
+
+        multilingual_summary_df.to_excel(
+            writer,
+            sheet_name="Sequential Summary",
+            startrow=start_row_multi + 2,
+            index=False
+        )
+
+        for col_num, col_name in enumerate(multilingual_summary_df.columns):
+            worksheet_seq.write(start_row_multi + 2, col_num, col_name, header_format)
+        # =========================
+        # SEQUENTIAL WINNER TABLE
+        # =========================
+
+        avg_latency_eng = english_summary_df.set_index("model")["avg_latency_ms"]
+        throughput_eng = english_summary_df.set_index("model")["throughput_req_per_sec"]
+
+
+        winner_latency_eng = "ElevenLabs" if avg_latency_eng["ElevenLabs"] < avg_latency_eng["Sarvam"] else "Sarvam"
+        winner_tp_eng = "ElevenLabs" if throughput_eng["ElevenLabs"] > throughput_eng["Sarvam"] else "Sarvam"
+
+        winner_start = start_row_multi + len(multilingual_summary_df) + 8
+
+        worksheet_seq.write(winner_start,0,"English Benchmark Winner Summary")
+
+        worksheet_seq.write(winner_start+1,0,"Metric",header_format)
+        worksheet_seq.write(winner_start+1,1,"Better Model",header_format)
+
+        worksheet_seq.write(winner_start+2,0,"Lowest Avg Latency",cell_format)
+        worksheet_seq.write(winner_start+2,1,winner_latency_eng,winner_format)
+
+        worksheet_seq.write(winner_start+3,0,"Highest Throughput",cell_format)
+        worksheet_seq.write(winner_start+3,1,winner_tp_eng,winner_format)
+        worksheet_seq.write(winner_start+4,0,"Lowest Cost",cell_format)
+        worksheet_seq.write(winner_start+4,1,cost_winner,winner_format)
+        # =========================
+        # =========================
+        # MULTILINGUAL WINNER TABLE
+        # =========================
+
+        avg_latency_multi = multilingual_df.groupby("model")["latency_seconds"].mean()*1000
+        throughput_multi = multilingual_df.groupby("model")["latency_seconds"].apply(lambda x: len(x)/x.sum())
+
+        winner_latency_multi = "ElevenLabs" if avg_latency_multi["ElevenLabs"] < avg_latency_multi["Sarvam"] else "Sarvam"
+        winner_tp_multi = "ElevenLabs" if throughput_multi["ElevenLabs"] > throughput_multi["Sarvam"] else "Sarvam"
+
+        multi_winner_start = winner_start + 7
+
+        worksheet_seq.write(multi_winner_start,0,"Multilingual Benchmark Winner Summary")
+
+        worksheet_seq.write(multi_winner_start+1,0,"Metric",header_format)
+        worksheet_seq.write(multi_winner_start+1,1,"Better Model",header_format)
+
+        worksheet_seq.write(multi_winner_start+2,0,"Lowest Avg Latency",cell_format)
+        worksheet_seq.write(multi_winner_start+2,1,winner_latency_multi,winner_format)
+
+        worksheet_seq.write(multi_winner_start+3,0,"Highest Throughput",cell_format)
+        worksheet_seq.write(multi_winner_start+3,1,winner_tp_multi,winner_format)
+        
 
         # Concurrency summary (if available)
         if concurrency_summary_df is not None:
@@ -335,54 +461,167 @@ if __name__ == "__main__":
             proper_df = pd.read_csv(PROPER_NOUN_LOG)
             proper_df = proper_df[proper_df["status"] == "Success"]
 
-            proper_pivot = proper_df.pivot_table(
-                index="phrase",
+            # Extract unique test id from output file (proper_1, proper_2, etc.)
+            proper_df["test_id"] = proper_df["output_file"].str.extract(r'proper_(\d+)').astype(int)
+
+            proper_pivot = proper_df.pivot(
+                index=["test_id", "phrase"],
                 columns="model",
                 values="latency_ms"
             ).reset_index()
 
+            proper_pivot = proper_pivot.sort_values("test_id")
+
             proper_pivot.columns.name = None
             proper_pivot = proper_pivot.rename(columns={
-                "phrase": "phrase",
+                "phrase": "Phrase",
                 "ElevenLabs": "Eleven Latency (ms)",
                 "Sarvam": "Sarvam Latency (ms)"
             })
 
-            # Merge manual ratings if present
+            # =========================
+            # Latency Winner
+            # =========================
+            def latency_winner(row):
+                if row["Eleven Latency (ms)"] < row["Sarvam Latency (ms)"]:
+                    return "ElevenLabs"
+                elif row["Eleven Latency (ms)"] > row["Sarvam Latency (ms)"]:
+                    return "Sarvam"
+                else:
+                    return "Tie"
+
+            proper_pivot["Latency Winner"] = proper_pivot.apply(latency_winner, axis=1)
+
+            # =========================
+            # Merge manual ratings
+            # =========================
+            # Merge manual ratings
+            # =========================
             MANUAL_RATING_CSV = "../logs/propernoun_manual_ratings.csv"
 
             if os.path.exists(MANUAL_RATING_CSV):
+
                 ratings_df = pd.read_csv(MANUAL_RATING_CSV)
+
+                # extract id from proper_1 → 1
+                ratings_df["test_id"] = ratings_df["phrase"].str.extract(r'proper_(\d+)').astype(int)
 
                 proper_pivot = proper_pivot.merge(
                     ratings_df,
-                    on="phrase",
+                    on="test_id",
                     how="left"
                 )
 
                 proper_pivot.rename(columns={
                     "eleven_score": "Eleven Pronunciation",
-                    "sarvam_score": "Sarvam Pronunciation",
-                    "better_model": "Better Model"
+                    "sarvam_score": "Sarvam Pronunciation"
                 }, inplace=True)
+
+                proper_pivot.drop(columns=["phrase","better_model"], inplace=True)
+
             else:
-                # If no manual ratings yet
                 proper_pivot["Eleven Pronunciation"] = ""
                 proper_pivot["Sarvam Pronunciation"] = ""
-                proper_pivot["Better Model"] = ""
 
-            # Rename for final Excel display
-            proper_pivot.rename(columns={
-                "phrase": "Phrase"
-            }, inplace=True)
+            # =========================
+            # Pronunciation Winner
+            # =========================
+            def pronunciation_winner(row):
+                try:
+                    e = float(row["Eleven Pronunciation"])
+                    s = float(row["Sarvam Pronunciation"])
+
+                    if e > s:
+                        return "ElevenLabs"
+                    elif s > e:
+                        return "Sarvam"
+                    else:
+                        return "Tie"
+                except:
+                    return ""
+
+            proper_pivot["Pronunciation Winner"] = proper_pivot.apply(pronunciation_winner, axis=1)
 
             # Add Notes column
             proper_pivot["Notes"] = ""
 
+            # Clean column order
+            proper_pivot = proper_pivot[
+                [
+                    "test_id",
+                    "Phrase",
+                    "Eleven Latency (ms)",
+                    "Sarvam Latency (ms)",
+                    "Latency Winner",
+                    "Eleven Pronunciation",
+                    "Sarvam Pronunciation",
+                    "Pronunciation Winner",
+                    "Notes"
+                ]
+            ]
+
+            # =========================
+            # BENCHMARK SUMMARY
+            # =========================
+            avg_eleven = round(proper_pivot["Eleven Latency (ms)"].mean(), 2)
+            avg_sarvam = round(proper_pivot["Sarvam Latency (ms)"].mean(), 2)
+
+            latency_winner_model = "ElevenLabs" if avg_eleven < avg_sarvam else "Sarvam"
+
+            eleven_pron = pd.to_numeric(proper_pivot["Eleven Pronunciation"], errors="coerce").mean()
+            sarvam_pron = pd.to_numeric(proper_pivot["Sarvam Pronunciation"], errors="coerce").mean()
+
+            if pd.isna(eleven_pron) or pd.isna(sarvam_pron):
+                pron_winner = ""
+            else:
+                pron_winner = "ElevenLabs" if eleven_pron > sarvam_pron else "Sarvam"
+
+            summary_rows = [
+                ["PROPER NOUN BENCHMARK SUMMARY"],
+                ["-------------------------------------------------"],
+                [f"Average Eleven Latency: {avg_eleven} ms"],
+                [f"Average Sarvam Latency: {avg_sarvam} ms"],
+                [f"Latency Winner: {latency_winner_model}"],
+                [f"Pronunciation Winner: {pron_winner}"],
+                ["-------------------------------------------------"],
+                ["Detailed Evaluation"],
+                []
+            ]
+
+            summary_df = pd.DataFrame(summary_rows)
+
+            # Write summary first
+            summary_df.to_excel(
+                writer,
+                sheet_name="Proper Noun Evaluation",
+                index=False,
+                header=False
+            )
+
+            # Write detailed table below summary
             proper_pivot.to_excel(
                 writer,
                 sheet_name="Proper Noun Evaluation",
+                startrow=len(summary_rows),
                 index=False
             )
+            #-------------------------------------------
+
+            # =========================
+            # Improve Excel Formatting
+            # =========================
+            worksheet = writer.sheets["Proper Noun Evaluation"]
+
+            # Adjust column widths
+            worksheet.set_column("A:A", 8)    # test_id
+            worksheet.set_column("B:B", 28)   # Phrase
+            worksheet.set_column("C:D", 18)   # Latency columns
+            worksheet.set_column("E:E", 16)   # Latency Winner
+            worksheet.set_column("F:G", 20)   # Pronunciation scores
+            worksheet.set_column("H:H", 22)   # Pronunciation Winner
+            worksheet.set_column("I:I", 20)   # Notes
+
+            # Freeze header row
+            worksheet.freeze_panes(len(summary_rows)+1, 0)
 
     print("Final professional benchmark report created!")
